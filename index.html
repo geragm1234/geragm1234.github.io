@@ -1,0 +1,1766 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Luis Gerardo García Martínez | Pharmaceutical Chemical Engineering</title>
+  <meta name="description" content="Chemical engineering student at Tecnológico de Monterrey aiming for a career in pharmaceutical engineering, with research in drug crystallisation and light–matter interactions. Seeking PhD opportunities in chemical engineering applied to pharmaceuticals.">
+
+  <!-- Apply the saved or system theme before anything paints -->
+  <script>
+    (function () {
+      var dark = false;
+      try {
+        var saved = localStorage.getItem('theme');
+        dark = saved ? saved === 'dark' : window.matchMedia('(prefers-color-scheme: dark)').matches;
+      } catch (e) {
+        dark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+      }
+      if (dark) document.documentElement.classList.add('dark');
+    })();
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300..800&display=swap" rel="stylesheet">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'system-ui', '-apple-system', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial', 'sans-serif']
+          },
+          colors: {
+            paper: '#F7F9FB',
+            night: { DEFAULT: '#0D1626', 800: '#14213A', 700: '#22324D' }
+          }
+        }
+      }
+    };
+  </script>
+
+  <style>
+    :root { --accent: #047857; }
+    .dark { --accent: #34D399; }
+
+    body {
+      font-optical-sizing: auto;
+      font-feature-settings: "cv05", "ss01";
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    :focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 6px; }
+
+    [data-header] { border-bottom: 1px solid transparent; transition: border-color .2s ease; }
+    [data-header].is-scrolled { border-bottom-color: #E2E8F0; }
+    .dark [data-header].is-scrolled { border-bottom-color: #22324D; }
+
+    html .nav-link[aria-current] { color: var(--accent); }
+
+    @keyframes rise { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
+    @keyframes bloom { from { opacity: 0; transform: scale(.94); } to { opacity: 1; transform: none; } }
+    .hero-in > * { animation: rise .8s cubic-bezier(.2,.7,.2,1) both; }
+    .hero-in > *:nth-child(2) { animation-delay: .08s; }
+    .hero-in > *:nth-child(3) { animation-delay: .16s; }
+    .hero-in > *:nth-child(4) { animation-delay: .24s; }
+    .hero-in > *:nth-child(5) { animation-delay: .32s; }
+    .beam-in { animation: bloom 1.3s .15s cubic-bezier(.2,.7,.2,1) both; }
+
+    .dark #beam { filter: drop-shadow(0 0 18px rgba(52, 211, 153, .35)); }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { animation: none !important; transition: none !important; }
+    }
+  </style>
+</head>
+
+<body class="bg-paper font-sans text-slate-900 antialiased dark:bg-night dark:text-slate-100">
+
+  <a href="#main" class="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[60] focus:rounded-md focus:bg-white focus:px-4 focus:py-2 focus:text-slate-900 focus:shadow">Skip to content</a>
+
+  <!-- ============ NAV ============ -->
+  <header data-header class="fixed inset-x-0 top-0 z-50 bg-paper/80 backdrop-blur-md dark:bg-night/80">
+    <nav class="mx-auto flex h-16 max-w-6xl items-center justify-between px-5 sm:px-8" aria-label="Main">
+      <a href="#hero" class="text-[15px] font-semibold tracking-tight">Luis García</a>
+
+      <ul class="hidden items-center gap-1 text-sm md:flex">
+        <li><a data-nav class="nav-link rounded-md px-3 py-2 text-slate-600 transition-colors hover:text-slate-900 dark:text-slate-400 dark:hover:text-white" href="#about">About</a></li>
+        <li><a data-nav class="nav-link rounded-md px-3 py-2 text-slate-600 transition-colors hover:text-slate-900 dark:text-slate-400 dark:hover:text-white" href="#research">Research</a></li>
+        <li><a data-nav class="nav-link rounded-md px-3 py-2 text-slate-600 transition-colors hover:text-slate-900 dark:text-slate-400 dark:hover:text-white" href="#experience">Experience</a></li>
+        <li><a data-nav class="nav-link rounded-md px-3 py-2 text-slate-600 transition-colors hover:text-slate-900 dark:text-slate-400 dark:hover:text-white" href="#skills">Skills</a></li>
+        <li><a data-nav class="nav-link rounded-md px-3 py-2 text-slate-600 transition-colors hover:text-slate-900 dark:text-slate-400 dark:hover:text-white" href="#contact">Contact</a></li>
+      </ul>
+
+      <div class="flex items-center gap-1">
+        <button id="themeToggle" type="button" aria-label="Switch to dark mode" title="Switch to dark mode"
+          class="grid h-10 w-10 place-items-center rounded-full text-slate-600 transition-colors hover:bg-slate-200/60 hover:text-slate-900 dark:text-slate-300 dark:hover:bg-night-700 dark:hover:text-white">
+          <svg class="h-5 w-5 dark:hidden" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+          <svg class="hidden h-5 w-5 dark:block" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+        </button>
+
+        <button id="menuToggle" type="button" aria-expanded="false" aria-controls="mobileMenu" aria-label="Open menu"
+          class="group grid h-10 w-10 place-items-center rounded-full text-slate-700 transition-colors hover:bg-slate-200/60 dark:text-slate-200 dark:hover:bg-night-700 md:hidden">
+          <svg class="h-5 w-5 group-aria-expanded:hidden" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+          <svg class="hidden h-5 w-5 group-aria-expanded:block" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+        </button>
+      </div>
+    </nav>
+
+    <div id="mobileMenu" class="hidden border-t border-slate-200 bg-paper dark:border-night-700 dark:bg-night md:hidden">
+      <ul class="mx-auto max-w-6xl px-5 py-2 text-base">
+        <li><a data-nav class="nav-link block rounded-md py-3 text-slate-700 dark:text-slate-300" href="#about">About</a></li>
+        <li><a data-nav class="nav-link block rounded-md py-3 text-slate-700 dark:text-slate-300" href="#research">Research</a></li>
+        <li><a data-nav class="nav-link block rounded-md py-3 text-slate-700 dark:text-slate-300" href="#experience">Experience</a></li>
+        <li><a data-nav class="nav-link block rounded-md py-3 text-slate-700 dark:text-slate-300" href="#skills">Skills</a></li>
+        <li><a data-nav class="nav-link block rounded-md py-3 text-slate-700 dark:text-slate-300" href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <!-- ============ HERO ============ -->
+    <section id="hero" class="scroll-mt-16">
+      <div class="mx-auto max-w-6xl px-5 pb-16 pt-28 sm:px-8 sm:pt-36 lg:pb-24">
+        <div class="grid items-center gap-14 lg:grid-cols-[1.15fr_0.85fr]">
+
+          <div class="hero-in">
+            <h1 class="text-balance text-[clamp(2.6rem,6.4vw,4.9rem)] font-semibold leading-[1.02] tracking-[-0.035em]">
+              Luis Gerardo<br>García Martínez
+            </h1>
+
+            <p class="mt-6 max-w-[34rem] text-pretty text-xl leading-relaxed text-slate-700 dark:text-slate-300 sm:text-[1.4rem] sm:leading-[1.5]">
+              Chemical engineering student at Tecnológico de Monterrey aiming for a career in pharmaceutical engineering, with research in drug crystallisation and light–matter interactions.
+            </p>
+
+            <p class="mt-4 max-w-[34rem] text-pretty leading-relaxed text-slate-600 dark:text-slate-400">
+              I'm looking for PhD opportunities in chemical engineering applied to pharmaceuticals, and I'm open to different areas within the field.
+            </p>
+
+            <div class="mt-9 flex flex-wrap items-center gap-3">
+              <a href="#research" class="inline-flex h-12 items-center rounded-full bg-emerald-700 px-6 text-[15px] font-medium text-white transition-colors hover:bg-emerald-800 dark:bg-emerald-400 dark:text-night dark:hover:bg-emerald-300">See my research</a>
+              <a href="#contact" class="inline-flex h-12 items-center rounded-full border border-slate-300 px-6 text-[15px] font-medium text-slate-800 transition-colors hover:border-slate-900 hover:text-slate-900 dark:border-night-700 dark:text-slate-200 dark:hover:border-slate-300 dark:hover:text-white">Get in touch</a>
+            </div>
+
+            <ul class="mt-8 flex flex-wrap gap-x-6 gap-y-3 text-sm text-slate-600 dark:text-slate-400" aria-label="Profiles and documents">
+              <li>
+                <a href="https://www.linkedin.com/in/luisgerardogarcia/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 transition-colors hover:text-emerald-700 dark:hover:text-emerald-400">
+                  <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+                  LinkedIn
+                </a>
+              </li>
+              <li>
+                <a href="mailto:luisgarcia.martinez@outlook.com" class="inline-flex items-center gap-2 transition-colors hover:text-emerald-700 dark:hover:text-emerald-400">
+                  <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 6-10 7L2 6"/></svg>
+                  Email
+                </a>
+              </li>
+              <li>
+                <!-- Put your PDF next to this HTML file with this exact name so the download works -->
+                <a href="Luis_Garcia_Resume.pdf" download class="inline-flex items-center gap-2 transition-colors hover:text-emerald-700 dark:hover:text-emerald-400">
+                  <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="m7 10 5 5 5-5"/><path d="M12 15V3"/></svg>
+                  Download CV (PDF)
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Live structured-light render -->
+          <figure class="beam-in mx-auto w-full max-w-[25rem] lg:ml-auto lg:mr-0">
+            <div class="relative aspect-square">
+              <svg class="absolute inset-0 h-full w-full text-slate-300 dark:text-night-700" viewBox="0 0 100 100" fill="none" stroke="currentColor" aria-hidden="true">
+                <circle cx="50" cy="50" r="49.4" stroke-width="1" vector-effect="non-scaling-stroke"/>
+                <circle cx="50" cy="50" r="47.5" stroke-width="3" stroke-dasharray="0.35 3.8" vector-effect="non-scaling-stroke" opacity=".8"/>
+                <path d="M50 3v94M3 50h94" stroke-width="1" vector-effect="non-scaling-stroke" opacity=".55"/>
+              </svg>
+              <canvas id="beam" class="absolute inset-0 h-full w-full" role="img" aria-label="Animated interference pattern of two Laguerre–Gaussian laser beams, shaped like rotating petals"></canvas>
+            </div>
+            <figcaption class="mt-5 text-sm leading-relaxed text-slate-600 dark:text-slate-400">
+              <p>Live render of two Laguerre–Gaussian beams with opposite twist interfering, from my structured-light simulations. Change ℓ to add petals.</p>
+              <div class="mt-3 flex flex-wrap items-center justify-between gap-3">
+                <div role="group" aria-label="Beam twist, ℓ" class="flex items-center gap-1">
+                  <span class="mr-1.5 text-sm font-medium italic text-slate-700 dark:text-slate-300" aria-hidden="true">ℓ</span>
+                  <button type="button" data-ell="1" aria-pressed="false" aria-label="ℓ equals 1" class="h-8 w-8 rounded-full text-xs font-medium tabular-nums text-slate-700 transition-colors hover:bg-slate-200/70 aria-pressed:bg-slate-900 aria-pressed:text-white dark:text-slate-300 dark:hover:bg-night-700 dark:aria-pressed:bg-slate-100 dark:aria-pressed:text-night">1</button>
+                  <button type="button" data-ell="2" aria-pressed="false" aria-label="ℓ equals 2" class="h-8 w-8 rounded-full text-xs font-medium tabular-nums text-slate-700 transition-colors hover:bg-slate-200/70 aria-pressed:bg-slate-900 aria-pressed:text-white dark:text-slate-300 dark:hover:bg-night-700 dark:aria-pressed:bg-slate-100 dark:aria-pressed:text-night">2</button>
+                  <button type="button" data-ell="3" aria-pressed="true" aria-label="ℓ equals 3" class="h-8 w-8 rounded-full text-xs font-medium tabular-nums text-slate-700 transition-colors hover:bg-slate-200/70 aria-pressed:bg-slate-900 aria-pressed:text-white dark:text-slate-300 dark:hover:bg-night-700 dark:aria-pressed:bg-slate-100 dark:aria-pressed:text-night">3</button>
+                  <button type="button" data-ell="4" aria-pressed="false" aria-label="ℓ equals 4" class="h-8 w-8 rounded-full text-xs font-medium tabular-nums text-slate-700 transition-colors hover:bg-slate-200/70 aria-pressed:bg-slate-900 aria-pressed:text-white dark:text-slate-300 dark:hover:bg-night-700 dark:aria-pressed:bg-slate-100 dark:aria-pressed:text-night">4</button>
+                  <button type="button" data-ell="5" aria-pressed="false" aria-label="ℓ equals 5" class="h-8 w-8 rounded-full text-xs font-medium tabular-nums text-slate-700 transition-colors hover:bg-slate-200/70 aria-pressed:bg-slate-900 aria-pressed:text-white dark:text-slate-300 dark:hover:bg-night-700 dark:aria-pressed:bg-slate-100 dark:aria-pressed:text-night">5</button>
+                </div>
+                <button id="beamToggle" type="button" class="shrink-0 rounded-full border border-slate-300 px-3 py-1 text-xs font-medium text-slate-700 transition-colors hover:border-slate-900 dark:border-night-700 dark:text-slate-300 dark:hover:border-slate-300">Pause</button>
+              </div>
+            </figcaption>
+          </figure>
+        </div>
+
+        <!-- Key facts -->
+        <dl class="mt-20 grid grid-cols-2 gap-x-8 gap-y-10 border-t border-slate-200 pt-10 dark:border-night-700 lg:grid-cols-4">
+          <div class="flex flex-col">
+            <dt class="mt-1 text-sm leading-snug text-slate-600 dark:text-slate-400">GPA in B.S. Chemical Engineering</dt>
+            <dd class="order-first text-3xl font-semibold tabular-nums tracking-tight">4.0</dd>
+          </div>
+          <div class="flex flex-col">
+            <dt class="mt-1 text-sm leading-snug text-slate-600 dark:text-slate-400">AIChE Southwest Regional Student Paper Competition, 2026</dt>
+            <dd class="order-first text-3xl font-semibold tracking-tight">1st place</dd>
+          </div>
+          <div class="flex flex-col">
+            <dt class="mt-1 text-sm leading-snug text-slate-600 dark:text-slate-400">Research positions in Mexico, the United States and the United Kingdom</dt>
+            <dd class="order-first text-3xl font-semibold tracking-tight">3 countries</dd>
+          </div>
+          <div class="flex flex-col">
+            <dt class="mt-1 text-sm leading-snug text-slate-600 dark:text-slate-400">AIChE conferences presented at: Boston, Massachusetts (2025) and Lubbock, Texas (2026)</dt>
+            <dd class="order-first text-3xl font-semibold tracking-tight">2 conferences</dd>
+          </div>
+        </dl>
+      </div>
+    </section>
+
+    <!-- ============ ABOUT ============ -->
+    <section id="about" class="scroll-mt-16 border-t border-slate-200 dark:border-night-700">
+      <div class="mx-auto grid max-w-6xl gap-10 px-5 py-20 sm:px-8 sm:py-28 lg:grid-cols-[13rem_1fr] lg:gap-12">
+        <h2 class="text-2xl font-semibold tracking-tight">About me</h2>
+
+        <div class="grid gap-14 lg:grid-cols-[1fr_16rem]">
+          <div class="max-w-[62ch] space-y-5 text-[1.075rem] leading-[1.75] text-slate-700 dark:text-slate-300">
+            <p>
+              I'm a chemical engineering student at Tecnológico de Monterrey who wants to build a career in pharmaceutical engineering. So far my research has explored two corners of that field: how drug molecules crystallise, and how light can tell chiral molecules apart.
+            </p>
+            <p>
+              From June to August 2026 I was a research intern at Imperial College London's Surfaces and Particle Engineering Laboratory. I studied how L-arginine, used as a soft template, and buffer concentration affect the formation and morphology of vancomycin crystals, and programmed an Opentrons OT-2 robot to run those screens systematically.
+            </p>
+            <p>
+              Since my first semester I've also worked on Sum Frequency Generation Circular Dichroism (SFG-CD), a nonlinear optical technique for telling enantiomers apart. I crystallised mandelic acid samples and assembled the setup at Colgate University, won first place at the 2026 AIChE Southwest Regional Student Paper Competition, and I'm now preparing to present the work again in November 2026 against the other regional winners.
+            </p>
+            <p>
+              For my PhD I'm looking at chemical engineering applied to pharmaceuticals, and I'm open to different areas within it. At Tecnológico de Monterrey, I also teach review sessions on Material and Energy Balances as Academic Affairs Director and serve as vice president of the Professional Development Program.
+            </p>
+
+            <div class="pt-4">
+              <h3 class="text-sm font-semibold text-slate-900 dark:text-white">Research interests</h3>
+              <ul class="mt-3 flex flex-wrap gap-2 text-sm">
+                <li class="rounded-full border border-emerald-700/30 bg-emerald-50 px-3 py-1 text-emerald-900 dark:border-emerald-400/30 dark:bg-emerald-400/10 dark:text-emerald-200">Pharmaceutical engineering</li>
+                <li class="rounded-full border border-slate-200 bg-white px-3 py-1 text-slate-700 dark:border-night-700 dark:bg-night-800 dark:text-slate-300">Crystallisation and particle engineering</li>
+                <li class="rounded-full border border-slate-200 bg-white px-3 py-1 text-slate-700 dark:border-night-700 dark:bg-night-800 dark:text-slate-300">Chiral drugs</li>
+                <li class="rounded-full border border-slate-200 bg-white px-3 py-1 text-slate-700 dark:border-night-700 dark:bg-night-800 dark:text-slate-300">Light–matter interactions</li>
+                <li class="rounded-full border border-slate-200 bg-white px-3 py-1 text-slate-700 dark:border-night-700 dark:bg-night-800 dark:text-slate-300">Nonlinear optics</li>
+                <li class="rounded-full border border-slate-200 bg-white px-3 py-1 text-slate-700 dark:border-night-700 dark:bg-night-800 dark:text-slate-300">Lab automation</li>
+              </ul>
+            </div>
+          </div>
+
+          <aside aria-labelledby="edu-title" class="lg:border-l lg:border-slate-200 lg:pl-8 dark:lg:border-night-700">
+            <h3 id="edu-title" class="text-sm font-semibold text-slate-900 dark:text-white">Education</h3>
+            <div class="mt-5 space-y-8 text-[15px] leading-relaxed">
+              <div>
+                <p class="font-medium">Tecnológico de Monterrey</p>
+                <p class="text-slate-700 dark:text-slate-300">B.S. Chemical Engineering</p>
+                <p class="text-sm tabular-nums text-slate-600 dark:text-slate-400">Aug 2024 – Jul 2028 (expected)</p>
+                <p class="mt-2 text-sm text-slate-700 dark:text-slate-300">GPA 4.0</p>
+              </div>
+              <div>
+                <p class="font-medium">PrepaTec Eugenio Garza Lagüera</p>
+                <p class="text-slate-700 dark:text-slate-300">High school</p>
+                <p class="text-sm tabular-nums text-slate-600 dark:text-slate-400">Aug 2021 – May 2024</p>
+                <p class="mt-2 text-sm text-slate-700 dark:text-slate-300">Honorable Mention<br>IB French, Higher Level</p>
+              </div>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ RESEARCH ============ -->
+    <section id="research" class="scroll-mt-16 border-t border-slate-200 dark:border-night-700">
+      <div class="mx-auto grid max-w-6xl gap-10 px-5 py-20 sm:px-8 sm:py-28 lg:grid-cols-[13rem_1fr] lg:gap-12">
+        <div>
+          <h2 class="text-2xl font-semibold tracking-tight">Research</h2>
+          <p class="mt-3 text-sm leading-relaxed text-slate-600 dark:text-slate-400">My goal is pharmaceutical engineering, and I'm open to different areas of it. So far my research has covered drug crystallisation and light–matter interactions.</p>
+        </div>
+
+        <div class="space-y-20">
+
+          <!-- Track 1: pharmaceutical crystallisation -->
+          <div>
+            <div class="flex items-baseline justify-between gap-4 border-b border-slate-200 pb-3 dark:border-night-700">
+              <h3 class="text-lg font-semibold tracking-tight">Pharmaceutical crystallisation</h3>
+              <p class="text-sm tabular-nums text-slate-600 dark:text-slate-400">2025 – 2026</p>
+            </div>
+
+            <div class="mt-8 space-y-8">
+              <!-- Vancomycin -->
+              <article class="grid gap-10 rounded-3xl border border-slate-200 bg-white p-6 dark:border-night-700 dark:bg-night-800 sm:p-10 lg:grid-cols-2">
+                <div>
+                  <p class="text-sm tabular-nums text-slate-600 dark:text-slate-400">Jun – Aug 2026, Imperial College London</p>
+                  <h4 class="mt-2 text-balance text-2xl font-semibold leading-tight tracking-tight sm:text-[1.7rem]">L-arginine as a soft template for vancomycin crystallisation</h4>
+                  <p class="mt-4 leading-relaxed text-slate-700 dark:text-slate-300">
+                    How a drug crystallises shapes its purity, stability and how easily it can be processed. In the Surfaces and Particle Engineering Laboratory, I tested whether L-arginine, added as a soft template, could steer how the antibiotic vancomycin crystallises, and how buffer concentration changed crystal formation, morphology and reproducibility.
+                  </p>
+                      <ul class="mt-5 flex flex-wrap gap-2 text-xs font-medium" aria-label="Methods and tools">
+                        <li class="rounded-full bg-emerald-50 px-2.5 py-1 text-emerald-800 dark:bg-emerald-400/10 dark:text-emerald-300">Vapour diffusion</li>
+                        <li class="rounded-full bg-emerald-50 px-2.5 py-1 text-emerald-800 dark:bg-emerald-400/10 dark:text-emerald-300">Soft templating</li>
+                        <li class="rounded-full bg-emerald-50 px-2.5 py-1 text-emerald-800 dark:bg-emerald-400/10 dark:text-emerald-300">Opentrons OT-2</li>
+                      </ul>
+                    
+                </div>
+
+                <figure>
+                  <div class="relative aspect-[4/3] overflow-hidden rounded-2xl border border-slate-200 bg-paper dark:border-night-700 dark:bg-night">
+                    <canvas id="crystalCanvas" class="absolute inset-0 h-full w-full" role="img" aria-label="Animation of a drop that slowly shrinks while rhomboid crystals nucleate and grow inside it"></canvas>
+                  </div>
+                  <figcaption class="mt-3 flex items-start justify-between gap-4 text-sm leading-relaxed text-slate-600 dark:text-slate-400">
+                    <span>As water leaves the drop, the solution becomes supersaturated and crystals nucleate and grow. Vapour diffusion screening works on this principle.</span>
+                    <button type="button" id="crystalToggle" class="shrink-0 rounded-full border border-slate-300 px-3 py-1 text-xs font-medium text-slate-700 transition-colors hover:border-slate-900 dark:border-night-700 dark:text-slate-300 dark:hover:border-slate-300">Pause</button>
+                  </figcaption>
+                </figure>
+              </article>
+
+              <!-- Mandelic acid: where both lines meet -->
+              <article class="grid items-center gap-8 rounded-3xl border border-slate-200 p-6 dark:border-night-700 sm:p-8 md:grid-cols-[1.05fr_1fr]">
+                <figure>
+                  <div class="relative aspect-[3/2] overflow-hidden rounded-2xl border border-slate-200 bg-paper dark:border-night-700 dark:bg-night">
+                    <canvas id="chiralCanvas" class="absolute inset-0 h-full w-full cursor-grab touch-pan-y active:cursor-grabbing" role="img" aria-label="The two enantiomers of mandelic acid rotating as mirror images of each other"></canvas>
+                  </div>
+                  <figcaption class="mt-3 flex items-start justify-between gap-4 text-sm leading-relaxed text-slate-600 dark:text-slate-400">
+                    <span>Same atoms, same bonds, mirror-image arrangement. Drag to rotate: no turn makes them match.</span>
+                    <button type="button" id="chiralToggle" class="shrink-0 rounded-full border border-slate-300 px-3 py-1 text-xs font-medium text-slate-700 transition-colors hover:border-slate-900 dark:border-night-700 dark:text-slate-300 dark:hover:border-slate-300">Pause</button>
+                  </figcaption>
+                </figure>
+                <div>
+                  <p class="text-sm tabular-nums text-slate-600 dark:text-slate-400">Jun – Aug 2025, Colgate University</p>
+                  <h4 class="mt-2 text-balance text-xl font-semibold leading-snug tracking-tight">Crystallising mandelic acid enantiomers</h4>
+                  <p class="mt-3 leading-relaxed text-slate-700 dark:text-slate-300">
+                    I grew crystals of each mandelic acid enantiomer by hot filtration so they could be measured with SFG-CD. It's where my two research lines meet: the crystals come from chemical engineering, the measurement from optics.
+                  </p>
+                  <p class="mt-3 leading-relaxed text-slate-700 dark:text-slate-300">
+                    Many drugs are chiral too, and their two enantiomers can act very differently in the body.
+                  </p>
+                </div>
+              </article>
+            </div>
+          </div>
+
+          <!-- Track 2: light–matter interactions -->
+          <div>
+            <div class="flex items-baseline justify-between gap-4 border-b border-slate-200 pb-3 dark:border-night-700">
+              <h3 class="text-lg font-semibold tracking-tight">Light–matter interactions</h3>
+              <p class="text-sm tabular-nums text-slate-600 dark:text-slate-400">2024 – present</p>
+            </div>
+
+            <div class="mt-8 space-y-8">
+              <!-- SFG-CD -->
+              <article class="rounded-3xl border border-slate-200 bg-white p-6 dark:border-night-700 dark:bg-night-800 sm:p-10">
+                <p class="text-sm tabular-nums text-slate-600 dark:text-slate-400">Oct 2024 – Present, Tecnológico de Monterrey and Colgate University</p>
+                <h4 class="mt-2 max-w-[30ch] text-balance text-2xl font-semibold leading-tight tracking-tight sm:text-[1.7rem]">
+                  First steps toward the characterization of enantiomers with SFG-CD
+                </h4>
+                <p class="mt-4 max-w-[62ch] leading-relaxed text-slate-700 dark:text-slate-300">
+                  Enantiomers share almost every physical property, which makes them hard to tell apart. This project combines Second Harmonic Generation and Sum Frequency Generation to see whether mandelic acid enantiomers respond differently to circularly polarized light. I'm continuing the research ahead of a second technical presentation in November 2026.
+                </p>
+
+                <figure class="mt-8">
+                  <div class="relative aspect-[16/10] overflow-hidden rounded-2xl border border-slate-200 bg-paper dark:border-night-700 dark:bg-night sm:aspect-[5/2]">
+                    <canvas id="sfgCanvas" class="absolute inset-0 h-full w-full" role="img" aria-label="Animation of two light waves meeting in a sample and producing a third wave at their sum frequency, whose strength changes with circular polarization"></canvas>
+                  </div>
+                  <figcaption class="mt-3 flex items-start justify-between gap-4 text-sm leading-relaxed text-slate-600 dark:text-slate-400">
+                    <span>Two beams at ω₁ and ω₂ meet in a chiral sample and generate light at ω₁ + ω₂. Switching between left and right circular polarization changes that signal; the difference, exaggerated here, is the SFG-CD response.</span>
+                    <button type="button" id="sfgToggle" class="shrink-0 rounded-full border border-slate-300 px-3 py-1 text-xs font-medium text-slate-700 transition-colors hover:border-slate-900 dark:border-night-700 dark:text-slate-300 dark:hover:border-slate-300">Pause</button>
+                  </figcaption>
+                </figure>
+
+                <!-- Milestones -->
+                <ol class="mt-10 grid gap-6 border-t border-slate-200 pt-8 dark:border-night-700 lg:grid-cols-5 lg:gap-5">
+                  <li class="relative pl-5 lg:pl-0 lg:pt-5">
+                    <span class="absolute left-0 top-1.5 h-2 w-2 rounded-full bg-slate-400 dark:bg-slate-500 lg:top-0" aria-hidden="true"></span>
+                    <p class="text-sm font-semibold tabular-nums">Oct 2024</p>
+                    <p class="mt-1 text-sm leading-relaxed text-slate-600 dark:text-slate-400">Started the project at Tecnológico de Monterrey.</p>
+                  </li>
+                  <li class="relative pl-5 lg:pl-0 lg:pt-5">
+                    <span class="absolute left-0 top-1.5 h-2 w-2 rounded-full bg-slate-400 dark:bg-slate-500 lg:top-0" aria-hidden="true"></span>
+                    <p class="text-sm font-semibold tabular-nums">Jun – Aug 2025</p>
+                    <p class="mt-1 text-sm leading-relaxed text-slate-600 dark:text-slate-400">Assembled the SFG-CD setup and prepared mandelic acid crystals at Colgate University.</p>
+                  </li>
+                  <li class="relative pl-5 lg:pl-0 lg:pt-5">
+                    <span class="absolute left-0 top-1.5 h-2 w-2 rounded-full bg-slate-400 dark:bg-slate-500 lg:top-0" aria-hidden="true"></span>
+                    <p class="text-sm font-semibold tabular-nums">Nov 2025</p>
+                    <p class="mt-1 text-sm leading-relaxed text-slate-600 dark:text-slate-400">Poster at the AIChE Annual Meeting in Boston, Massachusetts, Materials Engineering and Sciences Division.</p>
+                  </li>
+                  <li class="relative pl-5 lg:pl-0 lg:pt-5">
+                    <span class="absolute left-0 top-1 h-3 w-3 rounded-full bg-emerald-600 ring-4 ring-emerald-600/15 dark:bg-emerald-400 dark:ring-emerald-400/15 lg:-top-0.5" aria-hidden="true"></span>
+                    <p class="text-sm font-semibold tabular-nums text-emerald-700 dark:text-emerald-400">Mar 2026</p>
+                    <p class="mt-1 text-sm leading-relaxed text-slate-700 dark:text-slate-300">First place in the Regional Student Paper Competition with a 20-minute talk at Texas Tech University in Lubbock, Texas.</p>
+                  </li>
+                  <li class="relative pl-5 lg:pl-0 lg:pt-5">
+                    <span class="absolute left-0 top-1 h-3 w-3 rounded-full border-2 border-dashed border-emerald-600 dark:border-emerald-400 lg:-top-0.5" aria-hidden="true"></span>
+                    <p class="text-sm font-semibold tabular-nums">Nov 2026 <span class="font-normal text-slate-600 dark:text-slate-400">(upcoming)</span></p>
+                    <p class="mt-1 text-sm leading-relaxed text-slate-600 dark:text-slate-400">Technical presentation at the AIChE Annual Student Conference in Minneapolis, Minnesota, against the other regional first-place winners.</p>
+                  </li>
+                </ol>
+                    <ul class="mt-6 max-w-[65ch] list-disc space-y-2 pl-5 leading-relaxed text-slate-700 marker:text-emerald-600 dark:text-slate-300 dark:marker:text-emerald-400">
+                      <li>Studied enantiomer discrimination with nonlinear optics, combining Second Harmonic Generation and SFG to characterize mandelic acid.</li>
+                      <li>Designed and implemented an SFG-CD experiment to investigate second-order nonlinear optical interactions in chiral molecules.</li>
+                      <li>Analyzed preliminary numerical and experimental results describing the SFG-CD response of mandelic acid enantiomers.</li>
+                    </ul>
+                    <ul class="mt-5 flex flex-wrap gap-2 text-xs font-medium" aria-label="Methods and tools">
+                      <li class="rounded-full bg-emerald-50 px-2.5 py-1 text-emerald-800 dark:bg-emerald-400/10 dark:text-emerald-300">SHG and SFG</li>
+                      <li class="rounded-full bg-emerald-50 px-2.5 py-1 text-emerald-800 dark:bg-emerald-400/10 dark:text-emerald-300">Circular dichroism</li>
+                      <li class="rounded-full bg-emerald-50 px-2.5 py-1 text-emerald-800 dark:bg-emerald-400/10 dark:text-emerald-300">Nd:YAG 1064 / 532 nm</li>
+                      <li class="rounded-full bg-emerald-50 px-2.5 py-1 text-emerald-800 dark:bg-emerald-400/10 dark:text-emerald-300">MATLAB</li>
+                    </ul>
+                  
+              </article>
+
+              <div class="grid gap-8 lg:grid-cols-[1.1fr_0.9fr]">
+                <!-- LG beams -->
+                <article class="rounded-3xl border border-slate-200 p-6 dark:border-night-700 sm:p-8">
+                  <p class="text-sm tabular-nums text-slate-600 dark:text-slate-400">Jan 2026 – Present</p>
+                  <h4 class="mt-2 text-balance text-xl font-semibold leading-snug tracking-tight">Circularly polarized Laguerre–Gaussian beams in turbulent media</h4>
+                  <p class="mt-3 leading-relaxed text-slate-700 dark:text-slate-300">
+                    Does circular polarization help a twisted beam of light get through turbulence? I'm building MATLAB simulations to find out. The pattern at the top of this page comes from the same family of beams.
+                  </p>
+                      <ul class="mt-5 list-disc space-y-2 pl-5 leading-relaxed text-slate-700 marker:text-emerald-600 dark:text-slate-300 dark:marker:text-emerald-400">
+                        <li>Model the propagation and transmission of circularly polarized Laguerre–Gaussian beams through turbulent optical media.</li>
+                        <li>Compare transmitted optical power across turbulence conditions and polarization states to test whether circular polarization improves transmissivity.</li>
+                      </ul>
+                      <ul class="mt-5 flex flex-wrap gap-2 text-xs font-medium" aria-label="Methods and tools">
+                        <li class="rounded-full bg-emerald-50 px-2.5 py-1 text-emerald-800 dark:bg-emerald-400/10 dark:text-emerald-300">MATLAB</li>
+                        <li class="rounded-full bg-emerald-50 px-2.5 py-1 text-emerald-800 dark:bg-emerald-400/10 dark:text-emerald-300">Beam propagation</li>
+                        <li class="rounded-full bg-emerald-50 px-2.5 py-1 text-emerald-800 dark:bg-emerald-400/10 dark:text-emerald-300">Optical turbulence</li>
+                      </ul>
+                    
+                </article>
+
+                <!-- Recognition -->
+                <div class="px-1 sm:px-2">
+                  <h3 class="text-sm font-semibold text-slate-900 dark:text-white">Recognition</h3>
+                  <ul class="mt-4 divide-y divide-slate-200 dark:divide-night-700">
+                    <li class="py-4">
+                      <p class="font-medium">Student Technical Presentation Competition <span class="ml-1 rounded-full border border-dashed border-emerald-700/50 px-2 py-0.5 text-xs font-medium text-emerald-800 dark:border-emerald-400/50 dark:text-emerald-300">Upcoming</span></p>
+                      <p class="mt-1 text-sm leading-relaxed text-slate-600 dark:text-slate-400">AIChE Annual Student Conference, Minneapolis, Minnesota. November 2026. Open to the first-place winner of each regional competition.</p>
+                    </li>
+                    <li class="py-4">
+                      <p class="font-medium">First place, Regional Student Paper Competition</p>
+                      <p class="mt-1 text-sm leading-relaxed text-slate-600 dark:text-slate-400">Southwest AIChE Regional Conference, Texas Tech University, Lubbock, Texas. March 2026.</p>
+                    </li>
+                    <li class="py-4">
+                      <p class="font-medium">Poster presenter, Undergraduate Student Poster Competition</p>
+                      <p class="mt-1 text-sm leading-relaxed text-slate-600 dark:text-slate-400">AIChE Annual Meeting, Hynes Convention Center, Boston, Massachusetts. November 2025.</p>
+                    </li>
+                    <li class="py-4">
+                      <p class="font-medium">GPA 4.0</p>
+                      <p class="mt-1 text-sm leading-relaxed text-slate-600 dark:text-slate-400">B.S. Chemical Engineering, Tecnológico de Monterrey.</p>
+                    </li>
+                    <li class="py-4">
+                      <p class="font-medium">Honorable Mention</p>
+                      <p class="mt-1 text-sm leading-relaxed text-slate-600 dark:text-slate-400">PrepaTec Eugenio Garza Lagüera. 2024.</p>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ EXPERIENCE ============ -->
+    <section id="experience" class="scroll-mt-16 border-t border-slate-200 dark:border-night-700">
+      <div class="mx-auto grid max-w-6xl gap-10 px-5 py-20 sm:px-8 sm:py-28 lg:grid-cols-[13rem_1fr] lg:gap-12">
+        <div>
+          <h2 class="text-2xl font-semibold tracking-tight">Experience</h2>
+          <p class="mt-3 text-sm leading-relaxed text-slate-600 dark:text-slate-400">Research in three countries, plus teaching and student leadership. Most recent first.</p>
+        </div>
+
+        <div>
+          <div role="tablist" aria-label="Type of experience" class="inline-flex flex-wrap rounded-full border border-slate-200 bg-white p-1 dark:border-night-700 dark:bg-night-800">
+            <button role="tab" id="tab-research" aria-controls="panel-research" aria-selected="true" tabindex="0" type="button"
+              class="rounded-full px-4 py-2 text-sm font-medium text-slate-600 transition-colors hover:text-slate-900 aria-selected:bg-slate-900 aria-selected:text-white dark:text-slate-400 dark:hover:text-white dark:aria-selected:bg-slate-100 dark:aria-selected:text-night">
+              Research <span class="tabular-nums opacity-70">(3)</span>
+            </button>
+            <button role="tab" id="tab-leadership" aria-controls="panel-leadership" aria-selected="false" tabindex="-1" type="button"
+              class="rounded-full px-4 py-2 text-sm font-medium text-slate-600 transition-colors hover:text-slate-900 aria-selected:bg-slate-900 aria-selected:text-white dark:text-slate-400 dark:hover:text-white dark:aria-selected:bg-slate-100 dark:aria-selected:text-night">
+              Teaching and leadership <span class="tabular-nums opacity-70">(4)</span>
+            </button>
+          </div>
+
+          <!-- Research timeline -->
+          <div id="panel-research" role="tabpanel" aria-labelledby="tab-research" tabindex="0" class="mt-12">
+            <ol>
+              <li class="sm:grid sm:grid-cols-[9.5rem_1fr] sm:gap-8">
+                <p class="hidden pt-0.5 text-sm tabular-nums text-slate-600 dark:text-slate-400 sm:block">Jun – Aug 2026</p>
+                <div class="relative border-l border-slate-200 pb-14 pl-7 dark:border-night-700">
+                  <span class="absolute -left-[6.5px] top-2 h-3 w-3 rounded-full border-2 border-slate-400 bg-paper dark:border-slate-500 dark:bg-night" aria-hidden="true"></span>
+                  <p class="mb-2 text-sm tabular-nums text-slate-600 dark:text-slate-400 sm:hidden">Jun – Aug 2026</p>
+                  <h3 class="text-lg font-semibold tracking-tight">Undergraduate Research Intern</h3>
+                  <p class="mt-1 text-slate-800 dark:text-slate-200">Imperial College London, Surfaces and Particle Engineering Laboratory</p>
+                  <p class="text-sm text-slate-600 dark:text-slate-400">London, United Kingdom</p>
+                  <ul class="mt-4 max-w-[65ch] list-disc space-y-2 pl-5 leading-relaxed text-slate-700 marker:text-emerald-600 dark:text-slate-300 dark:marker:text-emerald-400">
+                    <li>Researched how L-arginine concentration, used as a soft template, affects vancomycin crystallisation in vapour diffusion screening experiments.</li>
+                    <li>Evaluated how buffer concentration influences crystal formation, morphology and experimental reproducibility.</li>
+                    <li>Programmed and operated an Opentrons OT-2 liquid-handling robot to automate solution preparation and run systematic crystallisation experiments.</li>
+                  </ul>
+                  <ul class="mt-5 flex flex-wrap gap-2 text-xs font-medium" aria-label="Methods and tools">
+                    <li class="rounded-full bg-emerald-50 px-2.5 py-1 text-emerald-800 dark:bg-emerald-400/10 dark:text-emerald-300">Pharmaceutical crystallisation</li>
+                    <li class="rounded-full bg-emerald-50 px-2.5 py-1 text-emerald-800 dark:bg-emerald-400/10 dark:text-emerald-300">Vapour diffusion</li>
+                    <li class="rounded-full bg-emerald-50 px-2.5 py-1 text-emerald-800 dark:bg-emerald-400/10 dark:text-emerald-300">Opentrons OT-2</li>
+                  </ul>
+                </div>
+              </li>
+
+              <li class="sm:grid sm:grid-cols-[9.5rem_1fr] sm:gap-8">
+                <p class="hidden pt-0.5 text-sm tabular-nums text-slate-600 dark:text-slate-400 sm:block">Jun – Aug 2025</p>
+                <div class="relative border-l border-slate-200 pb-14 pl-7 dark:border-night-700">
+                  <span class="absolute -left-[6.5px] top-2 h-3 w-3 rounded-full border-2 border-slate-400 bg-paper dark:border-slate-500 dark:bg-night" aria-hidden="true"></span>
+                  <p class="mb-2 text-sm tabular-nums text-slate-600 dark:text-slate-400 sm:hidden">Jun – Aug 2025</p>
+                  <h3 class="text-lg font-semibold tracking-tight">Undergraduate Research Intern</h3>
+                  <p class="mt-1 text-slate-800 dark:text-slate-200">Colgate University</p>
+                  <p class="text-sm text-slate-600 dark:text-slate-400">Hamilton, New York, United States</p>
+                  <ul class="mt-4 max-w-[65ch] list-disc space-y-2 pl-5 leading-relaxed text-slate-700 marker:text-emerald-600 dark:text-slate-300 dark:marker:text-emerald-400">
+                    <li>Crystallised mandelic acid enantiomers by hot filtration to prepare samples for SFG-CD analysis.</li>
+                    <li>Assembled an experimental setup for Sum Frequency Generation Circular Dichroism (SFG-CD) driven by a bichromatic laser beam.</li>
+                    <li>Worked with faculty to identify and optimise the optical configuration for SFG-CD measurements.</li>
+                  </ul>
+                  <ul class="mt-5 flex flex-wrap gap-2 text-xs font-medium" aria-label="Methods and tools">
+                    <li class="rounded-full bg-emerald-50 px-2.5 py-1 text-emerald-800 dark:bg-emerald-400/10 dark:text-emerald-300">Hot-filtration crystallisation</li>
+                    <li class="rounded-full bg-emerald-50 px-2.5 py-1 text-emerald-800 dark:bg-emerald-400/10 dark:text-emerald-300">Nd:YAG laser</li>
+                    <li class="rounded-full bg-emerald-50 px-2.5 py-1 text-emerald-800 dark:bg-emerald-400/10 dark:text-emerald-300">Polarization optics</li>
+                  </ul>
+                </div>
+              </li>
+
+              <li class="sm:grid sm:grid-cols-[9.5rem_1fr] sm:gap-8">
+                <p class="hidden pt-0.5 text-sm tabular-nums text-slate-600 dark:text-slate-400 sm:block">Oct 2024 – Present</p>
+                <div class="relative border-l border-slate-200 pb-2 pl-7 dark:border-night-700">
+                  <span class="absolute -left-[6.5px] top-2 h-3 w-3 rounded-full bg-emerald-600 ring-4 ring-emerald-600/15 dark:bg-emerald-400 dark:ring-emerald-400/15" aria-hidden="true"></span>
+                  <p class="mb-2 text-sm tabular-nums text-slate-600 dark:text-slate-400 sm:hidden">Oct 2024 – Present</p>
+                  <h3 class="text-lg font-semibold tracking-tight">Undergraduate Research Student</h3>
+                  <p class="mt-1 text-slate-800 dark:text-slate-200">Tecnológico de Monterrey</p>
+                  <p class="text-sm text-slate-600 dark:text-slate-400">Monterrey, Mexico</p>
+                  <ul class="mt-4 max-w-[65ch] list-disc space-y-2 pl-5 leading-relaxed text-slate-700 marker:text-emerald-600 dark:text-slate-300 dark:marker:text-emerald-400">
+                    <li>Develop MATLAB simulations of structured-light propagation and its nonlinear interactions with chiral molecules.</li>
+                    <li>Explore theoretical frameworks that relate structured-light polarization to enantiomer discrimination.</li>
+                    <li>Design optical configurations that optimise the experimental response for chiral discrimination.</li>
+                    <li>Continuing the SFG-CD research ahead of a technical presentation at the AIChE Annual Student Conference in November 2026.</li>
+                  </ul>
+                  <ul class="mt-5 flex flex-wrap gap-2 text-xs font-medium" aria-label="Methods and tools">
+                    <li class="rounded-full bg-emerald-50 px-2.5 py-1 text-emerald-800 dark:bg-emerald-400/10 dark:text-emerald-300">MATLAB</li>
+                    <li class="rounded-full bg-emerald-50 px-2.5 py-1 text-emerald-800 dark:bg-emerald-400/10 dark:text-emerald-300">Structured light</li>
+                    <li class="rounded-full bg-emerald-50 px-2.5 py-1 text-emerald-800 dark:bg-emerald-400/10 dark:text-emerald-300">Chiral discrimination</li>
+                  </ul>
+                </div>
+              </li>
+            </ol>
+          </div>
+
+          <!-- Teaching and leadership timeline -->
+          <div id="panel-leadership" role="tabpanel" aria-labelledby="tab-leadership" tabindex="0" hidden class="mt-12">
+            <ol>
+              <li class="sm:grid sm:grid-cols-[9.5rem_1fr] sm:gap-8">
+                <p class="hidden pt-0.5 text-sm tabular-nums text-slate-600 dark:text-slate-400 sm:block">Jul 2026 – Present</p>
+                <div class="relative border-l border-slate-200 pb-14 pl-7 dark:border-night-700">
+                  <span class="absolute -left-[6.5px] top-2 h-3 w-3 rounded-full bg-emerald-600 ring-4 ring-emerald-600/15 dark:bg-emerald-400 dark:ring-emerald-400/15" aria-hidden="true"></span>
+                  <p class="mb-2 text-sm tabular-nums text-slate-600 dark:text-slate-400 sm:hidden">Jul 2026 – Present</p>
+                  <h3 class="text-lg font-semibold tracking-tight">Academic Affairs Director</h3>
+                  <p class="mt-1 text-slate-800 dark:text-slate-200">Chemical Engineering Student Society, Tecnológico de Monterrey</p>
+                  <p class="text-sm text-slate-600 dark:text-slate-400">Monterrey, Mexico</p>
+                  <ul class="mt-4 max-w-[65ch] list-disc space-y-2 pl-5 leading-relaxed text-slate-700 marker:text-emerald-600 dark:text-slate-300 dark:marker:text-emerald-400">
+                    <li>Organize academic events for engineering students, including hackathons and the Integration Bee.</li>
+                    <li>Teach review sessions on Material and Energy Balances to large groups of third-semester students in Chemical Engineering, Biotechnology Engineering, Food Engineering and Sustainable Development Engineering.</li>
+                  </ul>
+                  <ul class="mt-5 flex flex-wrap gap-2 text-xs font-medium" aria-label="Focus areas">
+                    <li class="rounded-full bg-emerald-50 px-2.5 py-1 text-emerald-800 dark:bg-emerald-400/10 dark:text-emerald-300">Material and Energy Balances</li>
+                    <li class="rounded-full bg-emerald-50 px-2.5 py-1 text-emerald-800 dark:bg-emerald-400/10 dark:text-emerald-300">Teaching</li>
+                  </ul>
+                </div>
+              </li>
+
+              <li class="sm:grid sm:grid-cols-[9.5rem_1fr] sm:gap-8">
+                <p class="hidden pt-0.5 text-sm tabular-nums text-slate-600 dark:text-slate-400 sm:block">Jul 2026 – Present</p>
+                <div class="relative border-l border-slate-200 pb-14 pl-7 dark:border-night-700">
+                  <span class="absolute -left-[6.5px] top-2 h-3 w-3 rounded-full bg-emerald-600 ring-4 ring-emerald-600/15 dark:bg-emerald-400 dark:ring-emerald-400/15" aria-hidden="true"></span>
+                  <p class="mb-2 text-sm tabular-nums text-slate-600 dark:text-slate-400 sm:hidden">Jul 2026 – Present</p>
+                  <h3 class="text-lg font-semibold tracking-tight">Vice President</h3>
+                  <p class="mt-1 text-slate-800 dark:text-slate-200">Chemical Engineering Professional Development Program, Tecnológico de Monterrey</p>
+                  <p class="text-sm text-slate-600 dark:text-slate-400">Monterrey, Mexico</p>
+                  <ul class="mt-4 max-w-[65ch] list-disc space-y-2 pl-5 leading-relaxed text-slate-700 marker:text-emerald-600 dark:text-slate-300 dark:marker:text-emerald-400">
+                    <li>Organize company visits that show students industrial applications of chemical engineering and the careers that follow.</li>
+                    <li>Coordinate workshops and technical courses on chemical engineering and professional development.</li>
+                  </ul>
+                </div>
+              </li>
+
+              <li class="sm:grid sm:grid-cols-[9.5rem_1fr] sm:gap-8">
+                <p class="hidden pt-0.5 text-sm tabular-nums text-slate-600 dark:text-slate-400 sm:block">2026 – Present</p>
+                <div class="relative border-l border-slate-200 pb-14 pl-7 dark:border-night-700">
+                  <span class="absolute -left-[6.5px] top-2 h-3 w-3 rounded-full bg-emerald-600 ring-4 ring-emerald-600/15 dark:bg-emerald-400 dark:ring-emerald-400/15" aria-hidden="true"></span>
+                  <p class="mb-2 text-sm tabular-nums text-slate-600 dark:text-slate-400 sm:hidden">2026 – Present</p>
+                  <h3 class="text-lg font-semibold tracking-tight">Business Team Member</h3>
+                  <p class="mt-1 text-slate-800 dark:text-slate-200">AIChE Chem-E-Cube Competition Team, Tecnológico de Monterrey</p>
+                  <p class="text-sm text-slate-600 dark:text-slate-400">Monterrey, Mexico</p>
+                  <ul class="mt-4 max-w-[65ch] list-disc space-y-2 pl-5 leading-relaxed text-slate-700 marker:text-emerald-600 dark:text-slate-300 dark:marker:text-emerald-400">
+                    <li>Helped develop the business plan for a one-cubic-foot carbon dioxide capture system built for the AIChE Chem-E-Cube Competition.</li>
+                    <li>Researched markets and implementation to identify potential customers, strategic locations and commercialization opportunities.</li>
+                  </ul>
+                </div>
+              </li>
+
+              <li class="sm:grid sm:grid-cols-[9.5rem_1fr] sm:gap-8">
+                <p class="hidden pt-0.5 text-sm tabular-nums text-slate-600 dark:text-slate-400 sm:block">Aug – Nov 2025</p>
+                <div class="relative border-l border-slate-200 pb-2 pl-7 dark:border-night-700">
+                  <span class="absolute -left-[6.5px] top-2 h-3 w-3 rounded-full border-2 border-slate-400 bg-paper dark:border-slate-500 dark:bg-night" aria-hidden="true"></span>
+                  <p class="mb-2 text-sm tabular-nums text-slate-600 dark:text-slate-400 sm:hidden">Aug – Nov 2025</p>
+                  <h3 class="text-lg font-semibold tracking-tight">Human Resources Director</h3>
+                  <p class="mt-1 text-slate-800 dark:text-slate-200">AIESEC in Monterrey</p>
+                  <p class="text-sm text-slate-600 dark:text-slate-400">Monterrey, Nuevo León</p>
+                  <ul class="mt-4 max-w-[65ch] list-disc space-y-2 pl-5 leading-relaxed text-slate-700 marker:text-emerald-600 dark:text-slate-300 dark:marker:text-emerald-400">
+                    <li>Led recruitment and selection for open positions across AIESEC's operations in Nuevo León.</li>
+                    <li>Coordinated events and activities that supported member engagement and team development.</li>
+                    <li>Tracked member status, participation and activity across the regional organization.</li>
+                  </ul>
+                </div>
+              </li>
+            </ol>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ SKILLS ============ -->
+    <section id="skills" class="scroll-mt-16 border-t border-slate-200 dark:border-night-700">
+      <div class="mx-auto grid max-w-6xl gap-10 px-5 py-20 sm:px-8 sm:py-28 lg:grid-cols-[13rem_1fr] lg:gap-12">
+        <div>
+          <h2 class="text-2xl font-semibold tracking-tight">Skills</h2>
+          <p class="mt-3 text-sm leading-relaxed text-slate-600 dark:text-slate-400">Chemical engineering tools first, then the optics I use alongside them.</p>
+        </div>
+
+        <div>
+          <div class="grid items-start gap-x-12 gap-y-12 md:grid-cols-2">
+            <div>
+              <h3 class="font-semibold">Crystallisation and lab techniques</h3>
+              <p class="mt-1 text-sm text-slate-600 dark:text-slate-400">Growing, preparing and characterizing crystals.</p>
+              <ul class="mt-4 flex flex-wrap gap-2 text-sm">
+                <li class="rounded-lg border border-slate-200 bg-white px-3 py-1.5 dark:border-night-700 dark:bg-night-800">Vapour diffusion crystallisation</li>
+                <li class="rounded-lg border border-slate-200 bg-white px-3 py-1.5 dark:border-night-700 dark:bg-night-800">Hot-filtration crystal growth</li>
+                <li class="rounded-lg border border-slate-200 bg-white px-3 py-1.5 dark:border-night-700 dark:bg-night-800">Solution preparation</li>
+                <li class="rounded-lg border border-slate-200 bg-white px-3 py-1.5 dark:border-night-700 dark:bg-night-800">XRD</li>
+                <li class="rounded-lg border border-slate-200 bg-white px-3 py-1.5 dark:border-night-700 dark:bg-night-800">XAS</li>
+              </ul>
+            </div>
+
+            <div class="md:row-span-3">
+              <h3 class="font-semibold">Laboratory automation</h3>
+              <p class="mt-1 text-sm text-slate-600 dark:text-slate-400">Programmed at Imperial College London to prepare solutions and run systematic crystallisation screens.</p>
+              <ul class="mt-4 flex flex-wrap gap-2 text-sm">
+                <li class="rounded-lg border border-slate-200 bg-white px-3 py-1.5 dark:border-night-700 dark:bg-night-800">Opentrons OT-2 liquid-handling robot</li>
+              </ul>
+              <figure class="mt-6">
+                <div class="relative aspect-[4/3] overflow-hidden rounded-2xl border border-slate-200 bg-white dark:border-night-700 dark:bg-night-800">
+                  <canvas id="plateCanvas" class="absolute inset-0 h-full w-full" role="img" aria-label="Animation of a robot filling a 96-well plate column by column, after which crystals appear in some wells"></canvas>
+                </div>
+                <figcaption class="mt-3 flex items-start justify-between gap-4 text-sm leading-relaxed text-slate-600 dark:text-slate-400">
+                  <span>Illustrative screen: L-arginine concentration rises across the columns, buffer concentration changes down the rows, and crystals appear in some wells.</span>
+                  <button type="button" id="plateToggle" class="shrink-0 rounded-full border border-slate-300 px-3 py-1 text-xs font-medium text-slate-700 transition-colors hover:border-slate-900 dark:border-night-700 dark:text-slate-300 dark:hover:border-slate-300">Pause</button>
+                </figcaption>
+              </figure>
+            </div>
+
+            <div>
+              <h3 class="font-semibold">Process and simulation software</h3>
+              <p class="mt-1 text-sm text-slate-600 dark:text-slate-400">For process simulation, modelling and technical writing.</p>
+              <ul class="mt-4 flex flex-wrap gap-2 text-sm">
+                <li class="rounded-lg border border-slate-200 bg-white px-3 py-1.5 dark:border-night-700 dark:bg-night-800">Aspen/HYSYS</li>
+                <li class="rounded-lg border border-slate-200 bg-white px-3 py-1.5 dark:border-night-700 dark:bg-night-800">COMSOL Multiphysics</li>
+                <li class="rounded-lg border border-slate-200 bg-white px-3 py-1.5 dark:border-night-700 dark:bg-night-800">MATLAB</li>
+                <li class="rounded-lg border border-slate-200 bg-white px-3 py-1.5 dark:border-night-700 dark:bg-night-800">Python</li>
+                <li class="rounded-lg border border-slate-200 bg-white px-3 py-1.5 dark:border-night-700 dark:bg-night-800">LaTeX</li>
+              </ul>
+            </div>
+
+            <div>
+              <h3 class="font-semibold">Optical instrumentation</h3>
+              <p class="mt-1 text-sm text-slate-600 dark:text-slate-400">Hardware and techniques for nonlinear optics experiments.</p>
+              <ul class="mt-4 flex flex-wrap gap-2 text-sm">
+                <li class="rounded-lg border border-slate-200 bg-white px-3 py-1.5 dark:border-night-700 dark:bg-night-800">Nd:YAG GCE-100 laser, 1064 and 532 nm</li>
+                <li class="rounded-lg border border-slate-200 bg-white px-3 py-1.5 dark:border-night-700 dark:bg-night-800">Helium–neon lasers</li>
+                <li class="rounded-lg border border-slate-200 bg-white px-3 py-1.5 dark:border-night-700 dark:bg-night-800">Spatial light modulators</li>
+                <li class="rounded-lg border border-slate-200 bg-white px-3 py-1.5 dark:border-night-700 dark:bg-night-800">Dichroic mirrors</li>
+                <li class="rounded-lg border border-slate-200 bg-white px-3 py-1.5 dark:border-night-700 dark:bg-night-800">Polarization optics</li>
+                <li class="rounded-lg border border-slate-200 bg-white px-3 py-1.5 dark:border-night-700 dark:bg-night-800">Beam alignment</li>
+                <li class="rounded-lg border border-slate-200 bg-white px-3 py-1.5 dark:border-night-700 dark:bg-night-800">Polarization control</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Soft skills, each backed by where it was shown -->
+          <div class="mt-16 border-t border-slate-200 pt-10 dark:border-night-700">
+            <h3 class="font-semibold">Working with people</h3>
+            <p class="mt-1 text-sm text-slate-600 dark:text-slate-400">Each one paired with where I've put it into practice.</p>
+            <dl class="mt-6 grid gap-x-12 gap-y-6 md:grid-cols-2">
+              <div>
+                <dt class="font-medium">Teaching</dt>
+                <dd class="mt-1 text-sm leading-relaxed text-slate-600 dark:text-slate-400">Teach review sessions on Material and Energy Balances to large groups of third-semester students from four engineering programs.</dd>
+              </div>
+              <div>
+                <dt class="font-medium">Technical communication</dt>
+                <dd class="mt-1 text-sm leading-relaxed text-slate-600 dark:text-slate-400">Gave the 20-minute talk that won first place at the 2026 Southwest AIChE Regional Conference.</dd>
+              </div>
+              <div>
+                <dt class="font-medium">Leadership and event organization</dt>
+                <dd class="mt-1 text-sm leading-relaxed text-slate-600 dark:text-slate-400">Organize hackathons, the Integration Bee, company visits and technical workshops as Academic Affairs Director and Vice President.</dd>
+              </div>
+              <div>
+                <dt class="font-medium">Recruitment and selection</dt>
+                <dd class="mt-1 text-sm leading-relaxed text-slate-600 dark:text-slate-400">Ran recruitment for open positions across AIESEC's operations in Nuevo León.</dd>
+              </div>
+              <div>
+                <dt class="font-medium">Market research</dt>
+                <dd class="mt-1 text-sm leading-relaxed text-slate-600 dark:text-slate-400">Identified customers, locations and commercialization paths for a CO₂ capture system.</dd>
+              </div>
+              <div>
+                <dt class="font-medium">International collaboration</dt>
+                <dd class="mt-1 text-sm leading-relaxed text-slate-600 dark:text-slate-400">Worked with research teams in Mexico, the United States and the United Kingdom.</dd>
+              </div>
+            </dl>
+
+            <p class="mt-10 text-[15px] text-slate-700 dark:text-slate-300">
+              <span class="font-medium text-slate-900 dark:text-white">Languages:</span>
+              Spanish, English and French (IB Higher Level).
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CONTACT ============ -->
+    <section id="contact" class="scroll-mt-16 border-t border-slate-200 dark:border-night-700">
+      <div class="mx-auto grid max-w-6xl gap-10 px-5 py-20 sm:px-8 sm:py-28 lg:grid-cols-[13rem_1fr] lg:gap-12">
+        <div>
+          <h2 class="text-2xl font-semibold tracking-tight">Contact</h2>
+          <p class="mt-3 text-sm leading-relaxed text-slate-600 dark:text-slate-400">Based in Monterrey, Nuevo León, Mexico.</p>
+        </div>
+
+        <div class="grid gap-12 lg:grid-cols-[0.9fr_1.1fr]">
+          <div>
+            <p class="max-w-[40ch] text-xl leading-relaxed text-slate-800 dark:text-slate-200">
+              I'm looking for PhD opportunities in chemical engineering applied to pharmaceuticals, and I'm open to different research areas within the field. If your group works in pharmaceutical research, I'd be glad to talk.
+            </p>
+
+            <ul class="mt-8 space-y-5">
+              <li class="flex items-start gap-3">
+                <svg class="mt-0.5 h-5 w-5 shrink-0 text-emerald-700 dark:text-emerald-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 6-10 7L2 6"/></svg>
+                <div class="min-w-0">
+                  <a href="mailto:luisgarcia.martinez@outlook.com" class="break-all font-medium underline decoration-slate-300 underline-offset-4 transition-colors hover:decoration-emerald-600 dark:decoration-night-700 dark:hover:decoration-emerald-400">luisgarcia.martinez@outlook.com</a>
+                  <button type="button" data-copy="luisgarcia.martinez@outlook.com" class="ml-2 inline-flex items-center gap-1 rounded-md px-2 py-0.5 text-xs font-medium text-slate-600 transition-colors hover:bg-slate-200/70 hover:text-slate-900 dark:text-slate-400 dark:hover:bg-night-700 dark:hover:text-white">
+                    <svg class="h-3.5 w-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+                    <span data-label aria-live="polite">Copy</span>
+                  </button>
+                </div>
+              </li>
+              <li class="flex items-start gap-3">
+                <svg class="mt-0.5 h-5 w-5 shrink-0 text-emerald-700 dark:text-emerald-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                <a href="tel:+528116927607" class="font-medium tabular-nums underline decoration-slate-300 underline-offset-4 transition-colors hover:decoration-emerald-600 dark:decoration-night-700 dark:hover:decoration-emerald-400">+52 81 1692 7607</a>
+              </li>
+              <li class="flex items-start gap-3">
+                <svg class="mt-0.5 h-5 w-5 shrink-0 text-emerald-700 dark:text-emerald-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+                <a href="https://www.linkedin.com/in/luisgerardogarcia/" target="_blank" rel="noopener noreferrer" class="font-medium underline decoration-slate-300 underline-offset-4 transition-colors hover:decoration-emerald-600 dark:decoration-night-700 dark:hover:decoration-emerald-400">LinkedIn profile</a>
+              </li>
+              <li class="flex items-start gap-3">
+                <svg class="mt-0.5 h-5 w-5 shrink-0 text-emerald-700 dark:text-emerald-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                <span class="text-slate-700 dark:text-slate-300">Monterrey, Nuevo León, Mexico</span>
+              </li>
+            </ul>
+          </div>
+
+          <form id="contactForm" novalidate class="rounded-3xl border border-slate-200 bg-white p-6 dark:border-night-700 dark:bg-night-800 sm:p-8">
+            <div class="grid gap-5 sm:grid-cols-2">
+              <div>
+                <label for="cf-name" class="text-sm font-medium">Name</label>
+                <input id="cf-name" name="name" type="text" required autocomplete="name"
+                  class="mt-2 block w-full rounded-xl border border-slate-300 bg-paper px-4 py-3 text-[15px] text-slate-900 placeholder:text-slate-400 focus:border-emerald-600 focus:outline-none focus:ring-2 focus:ring-emerald-600/25 dark:border-night-700 dark:bg-night dark:text-slate-100 dark:placeholder:text-slate-500 dark:focus:border-emerald-400 dark:focus:ring-emerald-400/25"
+                  placeholder="Your name">
+              </div>
+              <div>
+                <label for="cf-email" class="text-sm font-medium">Email</label>
+                <input id="cf-email" name="email" type="email" required autocomplete="email"
+                  class="mt-2 block w-full rounded-xl border border-slate-300 bg-paper px-4 py-3 text-[15px] text-slate-900 placeholder:text-slate-400 focus:border-emerald-600 focus:outline-none focus:ring-2 focus:ring-emerald-600/25 dark:border-night-700 dark:bg-night dark:text-slate-100 dark:placeholder:text-slate-500 dark:focus:border-emerald-400 dark:focus:ring-emerald-400/25"
+                  placeholder="you@university.edu">
+              </div>
+              <div class="sm:col-span-2">
+                <label for="cf-topic" class="text-sm font-medium">What's it about?</label>
+                <select id="cf-topic" name="topic"
+                  class="mt-2 block w-full rounded-xl border border-slate-300 bg-paper px-4 py-3 text-[15px] text-slate-900 focus:border-emerald-600 focus:outline-none focus:ring-2 focus:ring-emerald-600/25 dark:border-night-700 dark:bg-night dark:text-slate-100 dark:focus:border-emerald-400 dark:focus:ring-emerald-400/25">
+                  <option>PhD opportunity</option>
+                  <option>Research collaboration</option>
+                  <option>Question about my work</option>
+                  <option>Something else</option>
+                </select>
+              </div>
+              <div class="sm:col-span-2">
+                <label for="cf-message" class="text-sm font-medium">Message</label>
+                <textarea id="cf-message" name="message" rows="5" required
+                  class="mt-2 block w-full resize-y rounded-xl border border-slate-300 bg-paper px-4 py-3 text-[15px] leading-relaxed text-slate-900 placeholder:text-slate-400 focus:border-emerald-600 focus:outline-none focus:ring-2 focus:ring-emerald-600/25 dark:border-night-700 dark:bg-night dark:text-slate-100 dark:placeholder:text-slate-500 dark:focus:border-emerald-400 dark:focus:ring-emerald-400/25"
+                  placeholder="Tell me a bit about your group or what you have in mind."></textarea>
+              </div>
+            </div>
+
+            <p id="formError" class="mt-4 hidden text-sm text-red-700 dark:text-red-400" role="alert"></p>
+
+            <div class="mt-6 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+              <button type="submit" class="inline-flex h-12 items-center justify-center rounded-full bg-emerald-700 px-6 text-[15px] font-medium text-white transition-colors hover:bg-emerald-800 dark:bg-emerald-400 dark:text-night dark:hover:bg-emerald-300">Send via email</button>
+              <p class="text-xs leading-relaxed text-slate-600 dark:text-slate-400 sm:max-w-[16rem] sm:text-right">Opens your email app with the message ready to send.</p>
+            </div>
+            <p id="formStatus" class="mt-4 text-sm text-emerald-800 empty:hidden dark:text-emerald-300" aria-live="polite"></p>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="border-t border-slate-200 dark:border-night-700">
+    <div class="mx-auto flex max-w-6xl flex-col gap-3 px-5 py-8 text-sm text-slate-600 dark:text-slate-400 sm:flex-row sm:items-center sm:justify-between sm:px-8">
+      <p>© <span id="year">2026</span> Luis Gerardo García Martínez</p>
+      <a href="#hero" class="transition-colors hover:text-slate-900 dark:hover:text-white">Back to top</a>
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      'use strict';
+      var root = document.documentElement;
+      var EMAIL = 'luisgarcia.martinez@outlook.com';
+      var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      var FONT = 'Inter, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif';
+
+      /* =========================================================
+         Page UI
+         ========================================================= */
+
+      /* ---------- Theme toggle ---------- */
+      var themeBtn = document.getElementById('themeToggle');
+      function syncThemeButton() {
+        var label = root.classList.contains('dark') ? 'Switch to light mode' : 'Switch to dark mode';
+        themeBtn.setAttribute('aria-label', label);
+        themeBtn.title = label;
+      }
+      themeBtn.addEventListener('click', function () {
+        var dark = root.classList.toggle('dark');
+        try { localStorage.setItem('theme', dark ? 'dark' : 'light'); } catch (e) { /* storage unavailable */ }
+        syncThemeButton();
+        window.dispatchEvent(new Event('themechange'));
+      });
+      syncThemeButton();
+
+      /* ---------- Mobile menu ---------- */
+      var menuBtn = document.getElementById('menuToggle');
+      var menu = document.getElementById('mobileMenu');
+      function setMenu(open) {
+        menu.classList.toggle('hidden', !open);
+        menuBtn.setAttribute('aria-expanded', String(open));
+        menuBtn.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+      }
+      menuBtn.addEventListener('click', function () {
+        setMenu(menuBtn.getAttribute('aria-expanded') !== 'true');
+      });
+      menu.querySelectorAll('a').forEach(function (a) {
+        a.addEventListener('click', function () { setMenu(false); });
+      });
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape' && menuBtn.getAttribute('aria-expanded') === 'true') {
+          setMenu(false);
+          menuBtn.focus();
+        }
+      });
+      var desktopQuery = window.matchMedia('(min-width: 768px)');
+      if (desktopQuery.addEventListener) desktopQuery.addEventListener('change', function (e) { if (e.matches) setMenu(false); });
+
+      /* ---------- Header hairline on scroll ---------- */
+      var header = document.querySelector('[data-header]');
+      function onScroll() { header.classList.toggle('is-scrolled', window.scrollY > 8); }
+      onScroll();
+      window.addEventListener('scroll', onScroll, { passive: true });
+
+      /* ---------- Scroll spy ---------- */
+      var navLinks = Array.prototype.slice.call(document.querySelectorAll('[data-nav]'));
+      if ('IntersectionObserver' in window) {
+        var spy = new IntersectionObserver(function (entries) {
+          entries.forEach(function (entry) {
+            if (!entry.isIntersecting) return;
+            var hash = '#' + entry.target.id;
+            navLinks.forEach(function (link) {
+              if (link.getAttribute('href') === hash) link.setAttribute('aria-current', 'location');
+              else link.removeAttribute('aria-current');
+            });
+          });
+        }, { rootMargin: '-45% 0px -50% 0px' });
+        document.querySelectorAll('main section[id]').forEach(function (s) { spy.observe(s); });
+      }
+
+      /* ---------- Experience tabs ---------- */
+      var tabs = Array.prototype.slice.call(document.querySelectorAll('[role="tab"]'));
+      function activateTab(tab, moveFocus) {
+        tabs.forEach(function (t) {
+          var selected = t === tab;
+          t.setAttribute('aria-selected', String(selected));
+          t.tabIndex = selected ? 0 : -1;
+          document.getElementById(t.getAttribute('aria-controls')).hidden = !selected;
+        });
+        if (moveFocus) tab.focus();
+      }
+      tabs.forEach(function (tab, i) {
+        tab.addEventListener('click', function () { activateTab(tab, false); });
+        tab.addEventListener('keydown', function (e) {
+          var next = null;
+          if (e.key === 'ArrowRight') next = tabs[(i + 1) % tabs.length];
+          if (e.key === 'ArrowLeft') next = tabs[(i - 1 + tabs.length) % tabs.length];
+          if (e.key === 'Home') next = tabs[0];
+          if (e.key === 'End') next = tabs[tabs.length - 1];
+          if (next) { e.preventDefault(); activateTab(next, true); }
+        });
+      });
+
+      /* ---------- Copy email ---------- */
+      document.querySelectorAll('[data-copy]').forEach(function (btn) {
+        var label = btn.querySelector('[data-label]');
+        btn.addEventListener('click', function () {
+          var text = btn.dataset.copy;
+          var done = function (ok) {
+            label.textContent = ok ? 'Copied' : 'Select the address to copy it';
+            setTimeout(function () { label.textContent = 'Copy'; }, 2200);
+          };
+          var fallback = function () {
+            try {
+              var ta = document.createElement('textarea');
+              ta.value = text;
+              ta.setAttribute('readonly', '');
+              ta.style.position = 'fixed';
+              ta.style.opacity = '0';
+              document.body.appendChild(ta);
+              ta.select();
+              var ok = document.execCommand('copy');
+              document.body.removeChild(ta);
+              done(ok);
+            } catch (e) { done(false); }
+          };
+          if (navigator.clipboard && navigator.clipboard.writeText) {
+            navigator.clipboard.writeText(text).then(function () { done(true); }, fallback);
+          } else {
+            fallback();
+          }
+        });
+      });
+
+      /* ---------- Contact form: opens a pre-filled email ---------- */
+      var form = document.getElementById('contactForm');
+      var formError = document.getElementById('formError');
+      var formStatus = document.getElementById('formStatus');
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        formStatus.textContent = '';
+        var name = form.elements.name.value.trim();
+        var email = form.elements.email.value.trim();
+        var topic = form.elements.topic.value;
+        var message = form.elements.message.value.trim();
+        var emailOk = !!email && form.elements.email.checkValidity();
+
+        var problems = [];
+        if (!name) problems.push('add your name');
+        if (!emailOk) problems.push('enter a valid email address');
+        if (!message) problems.push('write a message');
+
+        if (problems.length) {
+          formError.textContent = 'To send your message, ' + problems.join(', ') + '.';
+          formError.classList.remove('hidden');
+          (!name ? form.elements.name : !emailOk ? form.elements.email : form.elements.message).focus();
+          return;
+        }
+        formError.classList.add('hidden');
+
+        var subject = topic + ': message from ' + name;
+        var body = message + '\n\n' + name + '\n' + email;
+        window.location.href = 'mailto:' + EMAIL + '?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+        formStatus.textContent = 'Your email app should now open with the message ready to send. If it doesn\u2019t, write to ' + EMAIL + '.';
+      });
+
+      document.getElementById('year').textContent = new Date().getFullYear();
+
+      /* =========================================================
+         Science animations: shared helpers
+         ========================================================= */
+
+      function palette() {
+        var d = root.classList.contains('dark');
+        return {
+          dark: d,
+          accent: d ? '#34D399' : '#059669',
+          ink: d ? '#E2E8F0' : '#0F172A',
+          muted: d ? '#94A3B8' : '#475569',
+          faint: d ? '#22324D' : '#CBD5E1',
+          surface: d ? '#14213A' : '#FFFFFF',
+          rose: d ? '#FB7185' : '#E11D48',
+          violet: d ? '#A78BFA' : '#7C3AED',
+          amber: d ? '#FBBF24' : '#D97706',
+          hydrogen: '#CBD5E1',
+          carbon: d ? '#64748B' : '#475569'
+        };
+      }
+
+      function rgba(hex, a) {
+        var n = parseInt(hex.slice(1), 16);
+        return 'rgba(' + ((n >> 16) & 255) + ',' + ((n >> 8) & 255) + ',' + (n & 255) + ',' + a + ')';
+      }
+
+      function clamp(v, a, b) { return Math.max(a, Math.min(b, v)); }
+      function ease(x) { return x < 0.5 ? 2 * x * x : 1 - Math.pow(-2 * x + 2, 2) / 2; }
+
+      // Sizes a canvas to its box at device pixel ratio; drawing uses CSS pixels
+      function fitCanvas(canvas) {
+        var ctx = canvas.getContext('2d');
+        var s = { ctx: ctx, w: 1, h: 1 };
+        s.resize = function () {
+          var r = canvas.getBoundingClientRect();
+          var dpr = Math.min(window.devicePixelRatio || 1, 2);
+          s.w = Math.max(1, r.width);
+          s.h = Math.max(1, r.height);
+          canvas.width = Math.round(s.w * dpr);
+          canvas.height = Math.round(s.h * dpr);
+          ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+        };
+        s.resize();
+        return s;
+      }
+
+      function roundRect(ctx, x, y, w, h, r) {
+        ctx.beginPath();
+        ctx.moveTo(x + r, y);
+        ctx.arcTo(x + w, y, x + w, y + h, r);
+        ctx.arcTo(x + w, y + h, x, y + h, r);
+        ctx.arcTo(x, y + h, x, y, r);
+        ctx.arcTo(x, y, x + w, y, r);
+        ctx.closePath();
+      }
+
+      // Rhomboid outline (a slanted parallelogram), matching the shape of vancomycin crystals
+      function rhomboidPath(ctx, a, b) {
+        var s = b * 0.6;
+        ctx.beginPath();
+        ctx.moveTo(-a + s, -b);
+        ctx.lineTo(a + s, -b);
+        ctx.lineTo(a - s, b);
+        ctx.lineTo(-a - s, b);
+        ctx.closePath();
+      }
+
+      // Runs an animation only while it is on screen, the tab is visible and the
+      // viewer hasn't paused it or asked for reduced motion.
+      function runAnimation(opts) {
+        var running = false, paused = reduceMotion, onScreen = false, raf = 0, last = 0;
+        function tick(now) {
+          var dt = last ? Math.min(now - last, 64) : 16;
+          last = now;
+          opts.step(dt);
+          opts.render();
+          raf = requestAnimationFrame(tick);
+        }
+        function start() {
+          if (running || paused || !onScreen || document.hidden) return;
+          running = true;
+          last = 0;
+          raf = requestAnimationFrame(tick);
+        }
+        function stop() { running = false; cancelAnimationFrame(raf); }
+        function sync() {
+          if (!opts.toggle) return;
+          opts.toggle.textContent = paused ? 'Play' : 'Pause';
+          opts.toggle.setAttribute('aria-label', (paused ? 'Play ' : 'Pause ') + opts.label);
+        }
+        if (opts.toggle) {
+          opts.toggle.addEventListener('click', function () {
+            paused = !paused;
+            sync();
+            if (paused) stop(); else start();
+          });
+        }
+        sync();
+        if ('IntersectionObserver' in window) {
+          new IntersectionObserver(function (entries) {
+            onScreen = entries[0].isIntersecting;
+            if (onScreen) start(); else stop();
+          }, { rootMargin: '60px' }).observe(opts.el);
+        } else {
+          onScreen = true;
+          start();
+        }
+        document.addEventListener('visibilitychange', function () { if (document.hidden) stop(); else start(); });
+        window.addEventListener('themechange', function () { if (opts.onTheme) opts.onTheme(); opts.render(); });
+        window.addEventListener('redraw', function () { opts.render(); });
+        if (opts.onResize && 'ResizeObserver' in window) {
+          new ResizeObserver(function () { opts.onResize(); opts.render(); }).observe(opts.el);
+        }
+        opts.render();
+        return { isRunning: function () { return running; } };
+      }
+
+      /* =========================================================
+         1. Hero: Laguerre–Gaussian superposition with selectable ℓ
+         ========================================================= */
+      (function heroBeam() {
+        var canvas = document.getElementById('beam');
+        if (!canvas || !canvas.getContext) return;
+        var ctx = canvas.getContext('2d');
+        var N = 360;
+        canvas.width = N;
+        canvas.height = N;
+        var img = ctx.createImageData(N, N);
+        var data = img.data;
+        var radial = new Float32Array(N * N);
+        var angle = new Float32Array(N * N);
+        var ell = 3, phase = 0.35;
+
+        for (var y = 0; y < N; y++) {
+          for (var x = 0; x < N; x++) {
+            angle[y * N + x] = Math.atan2(y - N / 2 + 0.5, x - N / 2 + 0.5);
+          }
+        }
+
+        // |LG(p = 1, ℓ)|² with X = 2r²/w0²: X^ℓ (1 + ℓ − X)² e^(−X)
+        function profile(X, l) {
+          var a = Math.pow(X, l / 2) * (1 + l - X) * Math.exp(-X / 2);
+          return a * a;
+        }
+
+        function build(l) {
+          var peak = 0, X, ext = 1;
+          for (X = 0; X < 60; X += 0.01) peak = Math.max(peak, profile(X, l));
+          for (X = 60; X > 0; X -= 0.01) { if (profile(X, l) / peak >= 0.015) { ext = X; break; } }
+          var w0 = (N * 0.47) / Math.sqrt(ext / 2);   // fit the outer ring inside the reticle
+          var max = 0;
+          for (var yy = 0; yy < N; yy++) {
+            for (var xx = 0; xx < N; xx++) {
+              var dx = xx - N / 2 + 0.5, dy = yy - N / 2 + 0.5;
+              var v = profile(2 * (dx * dx + dy * dy) / (w0 * w0), l);
+              radial[yy * N + xx] = v;
+              if (v > max) max = v;
+            }
+          }
+          for (var k = 0; k < radial.length; k++) radial[k] /= max;
+        }
+
+        function paintColor() {
+          var c = root.classList.contains('dark') ? [52, 211, 153] : [5, 150, 105];
+          for (var j = 0; j < N * N; j++) {
+            var o = j * 4;
+            data[o] = c[0]; data[o + 1] = c[1]; data[o + 2] = c[2];
+          }
+        }
+
+        function draw() {
+          for (var j = 0; j < N * N; j++) {
+            var c = Math.cos(ell * angle[j] + phase);
+            var v = radial[j] * c * c;
+            data[j * 4 + 3] = v > 0.002 ? Math.min(255, Math.pow(v, 0.75) * 255) : 0;
+          }
+          ctx.putImageData(img, 0, 0);
+        }
+
+        build(ell);
+        paintColor();
+
+        var ellButtons = Array.prototype.slice.call(document.querySelectorAll('[data-ell]'));
+        ellButtons.forEach(function (btn) {
+          btn.addEventListener('click', function () {
+            ell = parseInt(btn.dataset.ell, 10);
+            ellButtons.forEach(function (b) { b.setAttribute('aria-pressed', String(b === btn)); });
+            build(ell);
+            draw();
+          });
+        });
+
+        runAnimation({
+          el: canvas,
+          toggle: document.getElementById('beamToggle'),
+          label: 'beam animation',
+          step: function (dt) { phase += dt * 0.0006; },
+          render: draw,
+          onTheme: paintColor
+        });
+      })();
+
+      /* =========================================================
+         2. Vapour diffusion drop: nucleation and crystal growth
+         ========================================================= */
+      (function crystalGrowth() {
+        var canvas = document.getElementById('crystalCanvas');
+        if (!canvas || !canvas.getContext) return;
+        var S = fitCanvas(canvas), ctx = S.ctx;
+        var CYCLE = 16000, NUCLEATE_END = 6000;
+        var t = 0, mols = [], xtals = [], plan = [];
+
+        function randInDisc(rmax) {
+          var a = Math.random() * Math.PI * 2, r = Math.sqrt(Math.random()) * rmax;
+          return { x: Math.cos(a) * r, y: Math.sin(a) * r };
+        }
+
+        function reset() {
+          t = 0; mols = []; xtals = []; plan = [];
+          for (var i = 0; i < 150; i++) mols.push(randInDisc(0.92));
+          [1900, 3000, 4200, 5500].forEach(function (time) {
+            var p, tries = 0;
+            do {
+              p = randInDisc(0.6);
+              tries++;
+            } while (tries < 50 && plan.some(function (q) { return Math.hypot(q.x - p.x, q.y - p.y) < 0.42; }));
+            plan.push({ t: time, x: p.x, y: p.y, ang: Math.random() * Math.PI, max: 0.1 + Math.random() * 0.05, done: false });
+          });
+        }
+
+        function step(dt) {
+          t += dt;
+          if (t > CYCLE) reset();
+          var j = 0.024 * Math.sqrt(dt / 16);
+          for (var i = 0; i < mols.length; i++) {
+            var m = mols[i];
+            m.x += (Math.random() - 0.5) * j;
+            m.y += (Math.random() - 0.5) * j;
+            var d = Math.hypot(m.x, m.y);
+            if (d > 0.92) { m.x *= 0.92 / d; m.y *= 0.92 / d; }
+          }
+          plan.forEach(function (p) {
+            if (!p.done && t >= p.t) {
+              p.done = true;
+              xtals.push({ x: p.x, y: p.y, ang: p.ang, size: 0.012, max: p.max, born: t });
+            }
+          });
+          xtals.forEach(function (c) {
+            c.size += dt * 0.000032 * Math.max(0, 1 - c.size / c.max);
+            var cs = Math.cos(c.ang), sn = Math.sin(c.ang);
+            var hl = c.size * 1.65 + 0.03, hw = c.size * 0.72 + 0.03;
+            for (var i = 0; i < mols.length; i++) {
+              var dx = mols[i].x - c.x, dy = mols[i].y - c.y;
+              var lx = dx * cs + dy * sn, ly = -dx * sn + dy * cs;
+              if ((lx * lx) / (hl * hl) + (ly * ly) / (hw * hw) < 1) {
+                var p = randInDisc(0.92);        // molecule joins the crystal; supersaturation keeps rising
+                mols[i].x = p.x; mols[i].y = p.y;
+              }
+            }
+          });
+        }
+
+        function render() {
+          var P = palette(), w = S.w, h = S.h;
+          ctx.clearRect(0, 0, w, h);
+          var prog = t / CYCLE;
+          var fade = clamp(Math.min(t / 500, (CYCLE - t) / 1200), 0, 1);
+          var cx = w / 2, cy = h / 2 + 8;
+          var R = Math.min(w, h) * 0.4 * (1 - 0.12 * prog);   // the drop shrinks as water leaves
+
+          // drop
+          ctx.beginPath();
+          ctx.arc(cx, cy, R, 0, Math.PI * 2);
+          ctx.fillStyle = rgba(P.accent, 0.04 + 0.1 * prog);
+          ctx.fill();
+          ctx.strokeStyle = rgba(P.accent, 0.5);
+          ctx.lineWidth = 1.25;
+          ctx.stroke();
+          ctx.beginPath();
+          ctx.arc(cx, cy, R * 0.86, Math.PI * 1.1, Math.PI * 1.42);
+          ctx.strokeStyle = P.dark ? 'rgba(255,255,255,0.18)' : 'rgba(255,255,255,0.95)';
+          ctx.lineWidth = 3;
+          ctx.lineCap = 'round';
+          ctx.stroke();
+
+          ctx.save();
+          ctx.globalAlpha = fade;
+
+          // molecules
+          ctx.fillStyle = rgba(P.muted, 0.7);
+          for (var i = 0; i < mols.length; i++) {
+            ctx.beginPath();
+            ctx.arc(cx + mols[i].x * R, cy + mols[i].y * R, 1.5, 0, Math.PI * 2);
+            ctx.fill();
+          }
+
+          // crystals
+          xtals.forEach(function (c) {
+            var k = clamp((t - c.born) / 400, 0, 1);
+            ctx.save();
+            ctx.translate(cx + c.x * R, cy + c.y * R);
+            ctx.rotate(c.ang);
+            ctx.scale(k, k);
+            var ra = c.size * 1.2 * R, rb = c.size * 0.72 * R;
+            rhomboidPath(ctx, ra, rb);
+            ctx.fillStyle = rgba(P.accent, P.dark ? 0.28 : 0.2);
+            ctx.fill();
+            ctx.strokeStyle = P.accent;
+            ctx.lineWidth = 1.25;
+            ctx.stroke();
+            rhomboidPath(ctx, ra * 0.55, rb * 0.55);
+            ctx.strokeStyle = rgba(P.accent, 0.5);
+            ctx.lineWidth = 1;
+            ctx.stroke();
+            ctx.restore();
+          });
+          ctx.restore();
+
+          // stage readout and cycle progress
+          var stage = t < 1900 ? 'Concentrating the drop' : t < NUCLEATE_END ? 'Nucleation' : 'Crystal growth';
+          ctx.font = '500 12px ' + FONT;
+          ctx.textBaseline = 'top';
+          ctx.textAlign = 'left';
+          ctx.fillStyle = P.muted;
+          ctx.fillText(stage, 14, 12);
+          ctx.textAlign = 'right';
+          ctx.fillText(xtals.length + (xtals.length === 1 ? ' crystal' : ' crystals'), w - 14, 12);
+          ctx.fillStyle = rgba(P.muted, 0.2);
+          ctx.fillRect(14, h - 12, w - 28, 2);
+          ctx.fillStyle = P.accent;
+          ctx.fillRect(14, h - 12, (w - 28) * prog, 2);
+        }
+
+        reset();
+        if (reduceMotion) { for (var n = 0; n < 700; n++) step(16); }
+
+        runAnimation({
+          el: canvas,
+          toggle: document.getElementById('crystalToggle'),
+          label: 'crystal growth animation',
+          step: step,
+          render: render,
+          onResize: S.resize
+        });
+      })();
+
+      /* =========================================================
+         3. Mandelic acid enantiomers: mirror images you can rotate
+         ========================================================= */
+      (function enantiomers() {
+        var canvas = document.getElementById('chiralCanvas');
+        if (!canvas || !canvas.getContext) return;
+        var S = fitCanvas(canvas), ctx = S.ctx;
+        var theta = 0.6, tilt = -0.35, dragging = false, lastX = 0;
+        var k = 1 / Math.sqrt(3);
+
+        // Substituents in CIP priority order: OH > COOH > phenyl > H
+        var subs = [
+          { label: 'OH', v: [k, k, k], r: 12, color: 'rose', text: '#FFFFFF' },
+          { label: 'COOH', v: [k, -k, -k], r: 16, color: 'amber', text: '#FFFFFF' },
+          { label: 'Ph', v: [-k, k, -k], r: 14, color: 'accent', text: '#FFFFFF' },
+          { label: 'H', v: [-k, -k, k], r: 8, color: 'hydrogen', text: '#334155' }
+        ];
+
+        // Right-handed frame (x right, y up, z toward viewer): R when OH · (COOH × Ph) < 0
+        var a = subs[0].v, b = subs[1].v, c = subs[2].v;
+        var triple = a[0] * (b[1] * c[2] - b[2] * c[1]) + a[1] * (b[2] * c[0] - b[0] * c[2]) + a[2] * (b[0] * c[1] - b[1] * c[0]);
+        var leftName = (triple < 0 ? '(R)' : '(S)') + '-mandelic acid';
+        var rightName = (triple < 0 ? '(S)' : '(R)') + '-mandelic acid';
+
+        function rotate(v) {
+          var ct = Math.cos(theta), st = Math.sin(theta), cx = Math.cos(tilt), sx = Math.sin(tilt);
+          var x1 = v[0] * ct + v[2] * st, z1 = -v[0] * st + v[2] * ct, y1 = v[1];
+          return [x1, y1 * cx - z1 * sx, y1 * sx + z1 * cx];
+        }
+
+        function drawMolecule(P, ox, oy, B, mirror) {
+          var atoms = subs.map(function (s) {
+            var p = rotate(s.v);
+            if (mirror) p[0] = -p[0];
+            return { s: s, x: p[0], y: p[1], z: p[2] };
+          });
+          atoms.push({ s: null, x: 0, y: 0, z: 0 });
+          atoms.sort(function (m, n) { return m.z - n.z; });
+
+          atoms.forEach(function (at) {
+            var persp = 1 / (1 - at.z * 0.18);
+            var sx = ox + at.x * B * persp, sy = oy - at.y * B * persp;
+            var scale = (B / 52) * persp;
+            if (at.s) {
+              ctx.beginPath();
+              ctx.moveTo(ox, oy);
+              ctx.lineTo(sx, sy);
+              ctx.strokeStyle = rgba(P.muted, 0.8);
+              ctx.lineWidth = 3 * scale;
+              ctx.lineCap = 'round';
+              ctx.stroke();
+            }
+            var r = (at.s ? at.s.r : 10) * scale;
+            ctx.beginPath();
+            ctx.arc(sx, sy, r, 0, Math.PI * 2);
+            ctx.fillStyle = at.s ? P[at.s.color] : P.carbon;
+            ctx.fill();
+            var g = ctx.createRadialGradient(sx - r * 0.35, sy - r * 0.4, r * 0.1, sx, sy, r);
+            g.addColorStop(0, 'rgba(255,255,255,0.55)');
+            g.addColorStop(1, 'rgba(255,255,255,0)');
+            ctx.fillStyle = g;
+            ctx.fill();
+            if (at.s) {
+              ctx.fillStyle = at.s.text;
+              ctx.font = '600 ' + Math.max(7, (at.s.label.length > 2 ? 8 : 9) * scale).toFixed(1) + 'px ' + FONT;
+              ctx.textAlign = 'center';
+              ctx.textBaseline = 'middle';
+              ctx.fillText(at.s.label, sx, sy + 0.5);
+            }
+          });
+        }
+
+        function render() {
+          var P = palette(), w = S.w, h = S.h;
+          ctx.clearRect(0, 0, w, h);
+          var B = Math.min(w * 0.13, h * 0.26);
+          var cy = h * 0.46;
+
+          // mirror plane
+          ctx.save();
+          ctx.setLineDash([4, 5]);
+          ctx.beginPath();
+          ctx.moveTo(w / 2, 26);
+          ctx.lineTo(w / 2, h - 30);
+          ctx.strokeStyle = P.faint;
+          ctx.lineWidth = 1;
+          ctx.stroke();
+          ctx.restore();
+          ctx.font = '500 11px ' + FONT;
+          ctx.fillStyle = P.muted;
+          ctx.textAlign = 'center';
+          ctx.textBaseline = 'top';
+          ctx.fillText('mirror plane', w / 2, 8);
+
+          drawMolecule(P, w * 0.25, cy, B, false);
+          drawMolecule(P, w * 0.75, cy, B, true);
+
+          ctx.font = '500 12px ' + FONT;
+          ctx.fillStyle = P.ink;
+          ctx.textAlign = 'center';
+          ctx.textBaseline = 'bottom';
+          ctx.fillText(leftName, w * 0.25, h - 10);
+          ctx.fillText(rightName, w * 0.75, h - 10);
+        }
+
+        var anim = runAnimation({
+          el: canvas,
+          toggle: document.getElementById('chiralToggle'),
+          label: 'molecule rotation',
+          step: function (dt) { if (!dragging) theta += dt * 0.0007; },
+          render: render,
+          onResize: S.resize
+        });
+
+        canvas.addEventListener('pointerdown', function (e) {
+          dragging = true;
+          lastX = e.clientX;
+          if (canvas.setPointerCapture) canvas.setPointerCapture(e.pointerId);
+        });
+        canvas.addEventListener('pointermove', function (e) {
+          if (!dragging) return;
+          theta += (e.clientX - lastX) * 0.012;
+          lastX = e.clientX;
+          if (!anim.isRunning()) render();
+        });
+        ['pointerup', 'pointercancel', 'lostpointercapture'].forEach(function (type) {
+          canvas.addEventListener(type, function () { dragging = false; });
+        });
+      })();
+
+      /* =========================================================
+         4. SFG-CD: two beams in, sum frequency out
+         ========================================================= */
+      (function sfgWaves() {
+        var canvas = document.getElementById('sfgCanvas');
+        if (!canvas || !canvas.getContext) return;
+        var S = fitCanvas(canvas), ctx = S.ctx;
+        var t = 20000, PERIOD = 3200;
+
+        function modeAt(tt) { return Math.floor(tt / PERIOD) % 2; }        // 0 = left, 1 = right circular
+        function ampAt(tt) {
+          var x = tt / PERIOD, n = Math.floor(x), frac = x - n;
+          var cur = n % 2 === 0 ? 1 : 0.5, prev = n % 2 === 0 ? 0.5 : 1;
+          return frac < 0.08 ? prev + (cur - prev) * (frac / 0.08) : cur;
+        }
+
+        function wave(x0, y0, x1, y1, lambda, amp, color, speed, ampFn, taperIn) {
+          var dx = x1 - x0, dy = y1 - y0, L = Math.hypot(dx, dy);
+          var ux = dx / L, uy = dy / L, nx = -uy, ny = ux, kk = 2 * Math.PI / lambda;
+          ctx.beginPath();
+          ctx.moveTo(x0, y0);
+          ctx.lineTo(x1, y1);
+          ctx.strokeStyle = rgba(color, 0.1);
+          ctx.lineWidth = amp * 2.6;
+          ctx.lineCap = 'round';
+          ctx.stroke();
+
+          ctx.beginPath();
+          for (var s = 0; s <= L; s += 1.5) {
+            var a = (ampFn ? amp * ampFn(s) : amp) * Math.min(1, s / taperIn);
+            var off = a * Math.sin(kk * (s - speed * t));
+            var px = x0 + ux * s + nx * off, py = y0 + uy * s + ny * off;
+            if (s === 0) ctx.moveTo(px, py); else ctx.lineTo(px, py);
+          }
+          ctx.strokeStyle = color;
+          ctx.lineWidth = 1.8;
+          ctx.stroke();
+          return L;
+        }
+
+        function render() {
+          var P = palette(), w = S.w, h = S.h;
+          ctx.clearRect(0, 0, w, h);
+          var sx = w * 0.56, sy = h * 0.5;
+          var lambda1 = Math.max(24, w * 0.07);
+          var amp = h * 0.055;
+          var speed = w * 0.00013;
+
+          // ω₂ is the second harmonic of ω₁ (λ₂ = λ₁/2), so the sum sits at 3ω₁ (λ₁/3)
+          wave(w * 0.03, h * 0.16, sx, sy, lambda1, amp, P.rose, speed, null, 24);
+          wave(w * 0.03, h * 0.84, sx, sy, lambda1 / 2, amp, P.accent, speed, null, 24);
+          var outX = w * 0.97;
+          var Lout = wave(sx, sy, outX, sy, lambda1 / 3, amp * 1.15, P.violet, speed, function (s) { return ampAt(t - s / speed); }, 10);
+
+          // sample
+          var glow = ampAt(t);
+          var g = ctx.createRadialGradient(sx, sy, 0, sx, sy, 34);
+          g.addColorStop(0, rgba(P.violet, 0.35 * glow));
+          g.addColorStop(1, rgba(P.violet, 0));
+          ctx.fillStyle = g;
+          ctx.fillRect(sx - 34, sy - 34, 68, 68);
+          ctx.save();
+          ctx.translate(sx, sy);
+          ctx.rotate(Math.PI / 4);
+          ctx.fillStyle = P.surface;
+          ctx.strokeStyle = P.ink;
+          ctx.lineWidth = 1.25;
+          ctx.fillRect(-8, -8, 16, 16);
+          ctx.strokeRect(-8, -8, 16, 16);
+          ctx.restore();
+
+          // labels
+          ctx.font = 'italic 500 13px ' + FONT;
+          ctx.textBaseline = 'middle';
+          ctx.textAlign = 'left';
+          ctx.fillStyle = P.rose;
+          ctx.fillText('ω₁', w * 0.03 + 4, Math.max(14, h * 0.16 - amp - 12));
+          ctx.fillStyle = P.accent;
+          ctx.fillText('ω₂', w * 0.03 + 4, Math.min(h - 14, h * 0.84 + amp + 12));
+          ctx.fillStyle = P.violet;
+          ctx.textAlign = 'right';
+          ctx.fillText('ω₁ + ω₂', outX, sy - amp * 1.15 - 14);
+          ctx.font = '500 11px ' + FONT;
+          ctx.fillStyle = P.muted;
+          ctx.textAlign = 'left';
+          ctx.fillText('chiral sample', sx + 4, sy + amp * 1.15 + 16);
+
+          // input polarization readout (top right)
+          var mode = modeAt(t);
+          var text = mode === 0 ? 'Input: left circular' : 'Input: right circular';
+          ctx.font = '500 12px ' + FONT;
+          ctx.textAlign = 'right';
+          ctx.fillStyle = P.muted;
+          ctx.fillText(text, w - 14, 18);
+          var tw = ctx.measureText(text).width;
+          var icx = w - 14 - tw - 14, icy = 18, dir = mode === 0 ? -1 : 1;
+          ctx.beginPath();
+          ctx.arc(icx, icy, 6, 0, Math.PI * 2);
+          ctx.strokeStyle = rgba(P.muted, 0.6);
+          ctx.lineWidth = 1;
+          ctx.stroke();
+          ctx.beginPath();
+          ctx.arc(icx + Math.cos(dir * t * 0.005) * 6, icy + Math.sin(dir * t * 0.005) * 6, 2.2, 0, Math.PI * 2);
+          ctx.fillStyle = P.ink;
+          ctx.fill();
+
+          // detected signal (bottom right): what reaches the detector now
+          var det = modeAt(t - Lout / speed);
+          var bw = 12, gap = 8, maxH = h * 0.16, base = h - 24, right = w - 16;
+          [{ lab: 'L', val: 1, x: right - 2 * bw - gap, m: 0 }, { lab: 'R', val: 0.25, x: right - bw, m: 1 }].forEach(function (bar) {
+            var bh = maxH * bar.val;
+            ctx.fillStyle = rgba(P.violet, det === bar.m ? 0.9 : 0.25);
+            ctx.fillRect(bar.x, base - bh, bw, bh);
+            ctx.fillStyle = P.muted;
+            ctx.font = '500 11px ' + FONT;
+            ctx.textAlign = 'center';
+            ctx.textBaseline = 'top';
+            ctx.fillText(bar.lab, bar.x + bw / 2, base + 4);
+          });
+          ctx.textAlign = 'right';
+          ctx.textBaseline = 'top';
+          ctx.fillText('SFG signal', right - 2 * bw - gap - 8, base + 4);
+        }
+
+        runAnimation({
+          el: canvas,
+          toggle: document.getElementById('sfgToggle'),
+          label: 'SFG-CD animation',
+          step: function (dt) { t += dt; },
+          render: render,
+          onResize: S.resize
+        });
+      })();
+
+      /* =========================================================
+         5. 96-well screening plate filled by a liquid handler
+         ========================================================= */
+      (function wellPlate() {
+        var canvas = document.getElementById('plateCanvas');
+        if (!canvas || !canvas.getContext) return;
+        var S = fitCanvas(canvas), ctx = S.ctx;
+        var ROWS = 8, COLS = 12, COL_MS = 520;
+        var FILL_END = COLS * COL_MS, HITS_START = FILL_END + 900, CYCLE = HITS_START + 2350 + 1800 + 700;
+        var t = 0, hits = [];
+
+        function reset() {
+          t = 0;
+          hits = [];
+          for (var r = 0; r < ROWS; r++) {
+            for (var c = 0; c < COLS; c++) {
+              if (Math.random() < 0.25) hits.push({ r: r, c: c, delay: Math.random() * 2000, ang: Math.random() * Math.PI });
+            }
+          }
+        }
+
+        function render() {
+          var P = palette(), w = S.w, h = S.h;
+          ctx.clearRect(0, 0, w, h);
+          var left0 = 30, top0 = 30;
+          var cell = Math.min((w - left0 - 12) / 12.9, (h - top0 - 10) / 8.9);
+          var gx = left0 + 0.6 * cell + Math.max(0, (w - left0 - 12 - 12.9 * cell) / 2);
+          var gy = top0 + 0.6 * cell;
+          var wr = cell * 0.36;
+          var fadeOut = clamp((CYCLE - t) / 700, 0, 1);
+          function colX(c) { return gx + (c + 0.5) * cell; }
+          function rowY(r) { return gy + (r + 0.5) * cell; }
+
+          // plate body
+          roundRect(ctx, gx - 0.6 * cell, gy - 0.6 * cell, cell * 12.85, cell * 8.85, 10);
+          ctx.fillStyle = P.dark ? '#0D1626' : '#F7F9FB';
+          ctx.fill();
+          ctx.strokeStyle = P.faint;
+          ctx.lineWidth = 1;
+          ctx.stroke();
+
+          // axis labels
+          var fs = Math.max(8, Math.min(10, cell * 0.34));
+          ctx.font = '500 ' + fs + 'px ' + FONT;
+          ctx.fillStyle = P.muted;
+          ctx.textAlign = 'center';
+          ctx.textBaseline = 'middle';
+          for (var c = 0; c < COLS; c++) ctx.fillText(String(c + 1), colX(c), gy - 0.3 * cell);
+          for (var r = 0; r < ROWS; r++) ctx.fillText('ABCDEFGH'[r], gx - 0.3 * cell, rowY(r));
+
+          ctx.font = '500 11px ' + FONT;
+          ctx.textAlign = 'left';
+          ctx.textBaseline = 'top';
+          var title = 'L-arginine concentration';
+          ctx.fillText(title, gx - 0.6 * cell, 8);
+          var tw = ctx.measureText(title).width;
+          if (gx - 0.6 * cell + tw + 70 < w) {
+            var bx = gx - 0.6 * cell + tw + 10;
+            var grad = ctx.createLinearGradient(bx, 0, bx + 56, 0);
+            grad.addColorStop(0, rgba(P.accent, 0.12));
+            grad.addColorStop(1, rgba(P.accent, 0.85));
+            ctx.fillStyle = grad;
+            roundRect(ctx, bx, 12, 56, 6, 3);
+            ctx.fill();
+          }
+          ctx.save();
+          ctx.translate(12, gy + 4 * cell);
+          ctx.rotate(-Math.PI / 2);
+          ctx.textAlign = 'center';
+          ctx.textBaseline = 'middle';
+          ctx.fillStyle = P.muted;
+          ctx.fillText('Buffer concentration', 0, 0);
+          ctx.restore();
+
+          // dispensing progress
+          var colPos = t / COL_MS, k = Math.min(COLS - 1, Math.floor(colPos)), f = colPos - Math.floor(colPos);
+          var filling = t < FILL_END;
+
+          for (var rr = 0; rr < ROWS; rr++) {
+            for (var cc = 0; cc < COLS; cc++) {
+              var x = colX(cc), y = rowY(rr);
+              ctx.beginPath();
+              ctx.arc(x, y, wr, 0, Math.PI * 2);
+              ctx.fillStyle = P.dark ? '#14213A' : '#FFFFFF';
+              ctx.fill();
+              ctx.strokeStyle = P.faint;
+              ctx.stroke();
+
+              var level = !filling ? 1 : cc < k ? 1 : cc === k ? clamp((f - 0.45) / 0.35, 0, 1) : 0;
+              if (level > 0) {
+                var alpha = (0.14 + 0.66 * (cc / (COLS - 1))) * (0.6 + 0.4 * (rr / (ROWS - 1)));
+                ctx.beginPath();
+                ctx.arc(x, y, wr * 0.9 * level, 0, Math.PI * 2);
+                ctx.fillStyle = rgba(P.accent, alpha * fadeOut);
+                ctx.fill();
+              }
+            }
+          }
+
+          // crystals appearing in some wells
+          hits.forEach(function (hit) {
+            var s = clamp((t - HITS_START - hit.delay) / 350, 0, 1);
+            if (s <= 0) return;
+            ctx.save();
+            ctx.translate(colX(hit.c), rowY(hit.r));
+            ctx.rotate(hit.ang);
+            ctx.scale(s, s);
+            rhomboidPath(ctx, wr * 0.42, wr * 0.26);
+            ctx.fillStyle = rgba(P.ink, 0.85 * fadeOut);
+            ctx.fill();
+            ctx.restore();
+          });
+
+          // 8-channel pipette head
+          var headX, headAlpha = 1, dip = 0;
+          if (filling) {
+            var from = k === 0 ? gx - cell : colX(k - 1);
+            headX = f < 0.3 ? from + (colX(k) - from) * ease(f / 0.3) : colX(k);
+            dip = f > 0.3 && f < 0.75 ? Math.sin(((f - 0.3) / 0.45) * Math.PI) : 0;
+          } else if (t < FILL_END + 500) {
+            var e = (t - FILL_END) / 500;
+            headX = colX(COLS - 1) + cell * 1.5 * ease(e);
+            headAlpha = 1 - e;
+          }
+          if (headX !== undefined) {
+            ctx.save();
+            ctx.globalAlpha = headAlpha;
+            roundRect(ctx, headX - cell * 0.34, gy - cell * 0.15, cell * 0.68, cell * 8.3, 6);
+            ctx.fillStyle = rgba(P.ink, 0.06 + 0.08 * dip);
+            ctx.fill();
+            ctx.strokeStyle = rgba(P.ink, 0.35);
+            ctx.stroke();
+            for (var tr = 0; tr < ROWS; tr++) {
+              ctx.beginPath();
+              ctx.arc(headX, rowY(tr), wr * (0.4 - 0.12 * dip), 0, Math.PI * 2);
+              ctx.fillStyle = rgba(P.ink, 0.5 + 0.3 * dip);
+              ctx.fill();
+            }
+            ctx.restore();
+          }
+        }
+
+        function step(dt) {
+          t += dt;
+          if (t > CYCLE) reset();
+        }
+
+        reset();
+        if (reduceMotion) t = HITS_START + 2400;
+
+        runAnimation({
+          el: canvas,
+          toggle: document.getElementById('plateToggle'),
+          label: 'plate screening animation',
+          step: step,
+          render: render,
+          onResize: S.resize
+        });
+      })();
+
+      // Redraw canvas text once Inter has loaded
+      if (document.fonts && document.fonts.ready) {
+        document.fonts.ready.then(function () { window.dispatchEvent(new Event('redraw')); });
+      }
+    })();
+  </script>
+</body>
+</html>
